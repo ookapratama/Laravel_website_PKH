@@ -23,5 +23,6 @@ class KetPerumahan extends Model
         'guna_wc',
         'jenis_wc',
         'akhir_wc',
+        'foto',
     ];
 }

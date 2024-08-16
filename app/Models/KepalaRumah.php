@@ -9,6 +9,7 @@ class KepalaRumah extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'kk',
         'nik',
         'nama',
         'jkl',

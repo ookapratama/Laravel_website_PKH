@@ -1,18 +1,27 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\PenerimaPKH;
 use Illuminate\Http\Request;
 
 class PenerimaPKHController extends Controller
 {
+
+    private $menu;
+    public function __construct($menu = 'penerima')
+    {
+        $this->menu = $menu;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $menu = $this->menu;
+        $datas = PenerimaPKH::orderByDesc('id')->get();
+        return view('pages.admin.penerimaPKH.index', compact('menu', 'datas'));
     }
 
     /**

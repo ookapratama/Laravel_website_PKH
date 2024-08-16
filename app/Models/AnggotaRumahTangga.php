@@ -26,4 +26,8 @@ class AnggotaRumahTangga extends Model
         'kedudukan_pekerjaan',
         'kepala_id',
     ]; 
+
+    public function krt() {
+        return $this->hasOne(KepalaRumah::class, 'kepala_id', 'id');
+    }
 }

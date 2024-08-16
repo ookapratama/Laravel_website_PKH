@@ -15,4 +15,16 @@ class PenerimaPKH extends Model
         'aset_id',
         'status',
     ];
+
+    public function krt() {
+        return $this->hasOne(KepalaRumah::class, 'kepala_id', 'id');
+    }
+
+    public function rumah() {
+        return $this->hasOne(KetPerumahan::class, 'perumahan_id', 'id');
+    }
+
+    public function aset() {
+        return $this->hasOne(KetAset::class, 'aset_id', 'id');
+    }
 }

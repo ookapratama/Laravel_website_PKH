@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('guna_wc');
             $table->string('jenis_wc');
             $table->string('akhir_wc');
+            $table->string('foto');
             $table->timestamps();
         });
     }

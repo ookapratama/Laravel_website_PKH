@@ -10,15 +10,15 @@
            
 
             
-            <li class="{{ Request::is('blank') ? 'active' : '' }}"><a class="nav-link" href="{{ route('blank') }}"><i
+            <li class="{{ $menu == 'dashboard' ? 'active' : '' }}"><a class="nav-link" href="{{ route('dashboard') }}"><i
                         class="far fa-square"></i> <span>Dashboard</span></a>
             </li>
 
-            <li class="{{ Request::is('blank') ? 'active' : '' }}"><a class="nav-link" href="{{ route('blank') }}"><i
+            <li class="{{ $menu == 'penerima' ? 'active' : '' }}"><a class="nav-link" href="{{ route('penerima.index') }}"><i
                         class="far fa-square"></i> <span>Calon Penerima PKH</span></a>
             </li>
 
-            <li class="{{ Request::is('blank') ? 'active' : '' }}"><a class="nav-link" href="{{ route('blank') }}"><i
+            {{-- <li class="{{ Request::is('blank') ? 'active' : '' }}"><a class="nav-link" href="{{ route('blank') }}"><i
                         class="far fa-square"></i> <span>Kepala Rumah Tangga</span></a>
             </li>
 
@@ -28,7 +28,7 @@
 
             <li class="{{ Request::is('blank') ? 'active' : '' }}"><a class="nav-link" href="{{ route('blank') }}"><i
                         class="far fa-square"></i> <span>Data Aset</span></a>
-            </li>
+            </li> --}}
 
         </ul>
 
