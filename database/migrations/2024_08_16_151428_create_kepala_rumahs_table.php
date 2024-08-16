@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('kepala_rumahs', function (Blueprint $table) {
             $table->id();
+            $table->string('nik');
+            $table->string('nama');
+            $table->string('jkl');
+            $table->string('alamat');
+            $table->string('rt');
+            $table->string('rw');
+            // $table->string('kabupaten');
+            // $table->string('kecamatan');
+            $table->integer('jumlah_art');
             $table->timestamps();
         });
     }

@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class KepalaRumah extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nik',
+        'nama',
+        'jkl',
+        'alamat',
+        'rt',
+        'rw',
+        // 'kabupaten',
+        // 'kecamatan',
+        'jumlah_art',
+    ];
 }

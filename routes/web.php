@@ -25,8 +25,8 @@ Route::prefix('admin')->group(function () {
 
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
     // Route::resource('/admin', AdminController::class);
-
     
+
 
 });
 

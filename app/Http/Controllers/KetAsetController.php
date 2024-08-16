@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\KepalaRumah;
+use App\Models\KetAset;
 use Illuminate\Http\Request;
 
-class KepalaRumahController extends Controller
+class KetAsetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class KepalaRumahController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(KepalaRumah $kepalaRumah)
+    public function show(KetAset $ketAset)
     {
         //
     }
@@ -42,7 +42,7 @@ class KepalaRumahController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(KepalaRumah $kepalaRumah)
+    public function edit(KetAset $ketAset)
     {
         //
     }
@@ -50,7 +50,7 @@ class KepalaRumahController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, KepalaRumah $kepalaRumah)
+    public function update(Request $request, KetAset $ketAset)
     {
         //
     }
@@ -58,7 +58,7 @@ class KepalaRumahController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(KepalaRumah $kepalaRumah)
+    public function destroy(KetAset $ketAset)
     {
         //
     }
