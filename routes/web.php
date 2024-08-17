@@ -29,6 +29,9 @@ use Illuminate\Support\Facades\Route;
 // User
 // Route::resource('/', UserController::class)->except(['create', 'store', 'update', 'edit', 'destroy']);
 Route::resource('/', UserController::class);
+Route::get('/kontak', [UserController::class, 'kontak'])->name('kontak');
+Route::get('/informasi', [UserController::class, 'informasi'])->name('informasi');
+Route::get('/statistik', [UserController::class, 'statistik'])->name('statistik');
 Route::resource('/permintaan', Penerima::class)->except(['edit', 'update', 'destroy']);
 Route::get('/permintaan/show', [Penerima::class, 'show'])->name('permintaan.cek');
 

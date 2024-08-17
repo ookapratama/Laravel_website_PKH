@@ -1,4 +1,4 @@
-@extends('layouts.user.app', ['title' => 'Website PKH'])
+@extends('layouts.user.app', ['title' => 'Website PKH Kabupaten Barru'])
 
 @section('content')
     @push('styles')
@@ -7,22 +7,20 @@
     <div class="main-content ">
         <section class="section">
             <div class="section-header">
-                <h1>Top Navigation</h1>
+                <h1>Sistem Pengajuan PKH Kabupaten Barru</h1>
               
             </div>
 
             <div class="section-body">
                 <div class="card">
-                    <div class="card-header">
+                    {{-- <div class="card-header">
                         <h4>Example Card</h4>
-                    </div>
+                    </div> --}}
                     <div class="card-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p><strong>Program Keluarga Harapan </strong> yang selanjutnya disebut PKH adalah program pemberian bantuan sosial bersyarat kepada Keluarga Miskin (KM) yang ditetapkan sebagai keluarga penerima manfaat PKH.</p>
+                        <p>Sebagai upaya percepatan penanggulangan kemiskinan, sejak tahun 2007 Pemerintah Indone­sia telah melaksanakan PKH. ProgramPerlindungan Sosial yang juga dikenal di dunia internasional dengan istilah Conditional Cash Transfers (CCT) ini terbukti cukup berhasil dalam menanggulangi kemiskinan yang dihadapi di negara-negara tersebut, terutama masalah kemiskinan kronis.</p>
+                        <p>Sebagai sebuah program bantuan sosial bersyarat, PKH membuka akses keluarga miskin terutama ibu hamil dan anak untuk memanfaatkan berbagai fasilitas layanan kesehatan (faskes) dan fasilitas layanan pendidikan (fasdik) yang tersedia di sekitar mereka.Manfaat PKH juga mulai didorong untuk mencakup penyandang disabilitas dan lanjut usia dengan mempertahankan taraf kesejahteraan sosialnya sesuai dengan amanat konstitusi dan Nawacita Presiden RI.</p>
+                        <p>Melalui PKH, KM didorong untuk memiliki akses dan memanfaatkan  pelayanan sosial dasar kesehatan, pendidikan, pangan dan gizi,perawatan, dan pendampingan, termasuk akses terhadap berbagai program perlindungan sosial lainnya yang merupakan program komplementer secara berkelanjutan. PKH diarahkan untuk menjadi episentrum dan center of excellence penanggulangan kemiskinan yang mensinergikan berbagai program perlindungan dan pemberdayaan sosial nasional.</p>
                     </div>
                     
                 </div>

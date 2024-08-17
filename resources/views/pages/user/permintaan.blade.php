@@ -1,4 +1,4 @@
-@extends('layouts.user.app', ['title' => 'Permintaan PKH'])
+@extends('layouts.user.app', ['title' => 'Website PKH Kabupaten Barru'])
 
 @section('content')
     @push('styles')
