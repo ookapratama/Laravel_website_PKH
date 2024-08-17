@@ -97,10 +97,9 @@
                                                                 class="btn btn-primary my-2">Verifikasi</button>
                                                         @endif
 
-                                                        <a target="_blank"
-                                                                href="{{ route('cetak', $data->id) }}"
-                                                                class="btn btn-info "> <i class="fas fa-print"></i> 
-                                                            </a>
+                                                        <a target="_blank" href="{{ route('cetak', $data->id) }}"
+                                                            class="btn btn-info "> <i class="fas fa-print"></i>
+                                                        </a>
 
 
                                                         <a href="{{ route('penerima.edit', $data->id) }}"

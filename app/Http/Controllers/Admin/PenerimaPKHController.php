@@ -8,6 +8,7 @@ use App\Models\KepalaRumah;
 use App\Models\KetAset;
 use App\Models\KetPerumahan;
 use App\Models\PenerimaPKH;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
@@ -89,6 +90,36 @@ class PenerimaPKHController extends Controller
 
         $getPKH->update($r);
         return response()->json($getPKH);
+    }
+
+    public function cetak(Request $r, $id)
+    {
+        $r = $r->all();
+        $data = PenerimaPKH::findOrFail($id);
+        // dd($data);
+        
+        
+        $getKepala = KepalaRumah::where('id', $data->kepala_id)->first();
+        
+        
+        $getArt = AnggotaRumahTangga::where('kepala_id', $getKepala->id)->get();
+        // dd($getArt);
+        
+
+        $getAset = KetAset::where('id', $data->aset_id)->first();
+        
+        
+        $getRumah = KetPerumahan::where('id', $data->perumahan_id)->first();
+        
+
+
+
+        // Load the view with the data
+        $pdf = Pdf::loadView('pages.admin.penerimaPKH.cetak', compact('data', 'getArt', 'getAset', 'getRumah', 'getKepala'))
+        ->setPaper('a3', 'landscape');;
+
+        // Download the PDF
+        return $pdf->download('data-permintaan-PKH.pdf');
     }
 
     /**
