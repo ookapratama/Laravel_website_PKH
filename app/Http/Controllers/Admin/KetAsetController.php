@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\AnggotaRumahTangga;
+use App\Models\KepalaRumah;
+use App\Models\KetAset;
 use Illuminate\Http\Request;
 
-class AnggotaRumahTanggaController extends Controller
+class KetAsetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,7 +30,7 @@ class AnggotaRumahTanggaController extends Controller
      */
     public function store(Request $request)
     {
-        // $r  = $reque
+        //
     }
 
     /**
@@ -37,15 +38,16 @@ class AnggotaRumahTanggaController extends Controller
      */
     public function show(Request $r)
     {
-        $r = $r->all();
-        $data = AnggotaRumahTangga::where('kepala_id', $r['id'])->get();
-        dd($data);
+        $getkrt = KepalaRumah::find($r->krt_id);
+        $datas = KetAset::where('kepala_id', $getkrt->id)->first();
+        // dd($datas);
+        return view('pages.admin.penerimaPKH.modal.modal_aset', compact('datas'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(AnggotaRumahTangga $anggotaRumahTangga)
+    public function edit(string $id)
     {
         //
     }
@@ -53,7 +55,7 @@ class AnggotaRumahTanggaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, AnggotaRumahTangga $anggotaRumahTangga)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -61,7 +63,7 @@ class AnggotaRumahTanggaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AnggotaRumahTangga $anggotaRumahTangga)
+    public function destroy(string $id)
     {
         //
     }

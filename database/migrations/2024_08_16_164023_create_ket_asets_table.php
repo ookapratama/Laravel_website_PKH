@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('jumlah_ternak');
             $table->string('have_usaha');
             $table->string('penghasilan_bulanan');
+            $table->string('kepala_id');
             $table->timestamps();
         });
     }

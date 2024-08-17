@@ -18,5 +18,6 @@ class KetAset extends Model
         'jumlah_ternak',
         'have_usaha',
         'penghasilan_bulanan',
+        'kepala_id',
     ];
 }

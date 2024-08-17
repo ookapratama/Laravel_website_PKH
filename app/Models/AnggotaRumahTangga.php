@@ -28,6 +28,6 @@ class AnggotaRumahTangga extends Model
     ]; 
 
     public function krt() {
-        return $this->hasOne(KepalaRumah::class, 'kepala_id', 'id');
+        return $this->hasOne(KepalaRumah::class, 'id', 'kepala_id');
     }
 }

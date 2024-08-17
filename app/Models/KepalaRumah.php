@@ -20,4 +20,8 @@ class KepalaRumah extends Model
         // 'kecamatan',
         'jumlah_art',
     ];
+
+    public function art() {
+        return $this->hasMany(AnggotaRumahTangga::class, '');
+    }
 }

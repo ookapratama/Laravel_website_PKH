@@ -1,7 +1,15 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AnggotaRumahTanggaController;
+use App\Http\Controllers\Admin\KetAset;
+use App\Http\Controllers\Admin\KetAsetController;
+use App\Http\Controllers\Admin\KetPerumahan;
+use App\Http\Controllers\Admin\KetPerumahanController as AdminKetPerumahanController;
 use App\Http\Controllers\Admin\PenerimaPKHController;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\KetPerumahanController;
+use App\Http\Controllers\User\Penerima;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,16 +29,48 @@ use Illuminate\Support\Facades\Route;
 // User
 // Route::resource('/', UserController::class)->except(['create', 'store', 'update', 'edit', 'destroy']);
 Route::resource('/', UserController::class);
+Route::resource('/permintaan', Penerima::class)->except(['edit', 'update', 'destroy']);
+Route::get('/permintaan/show', [Penerima::class, 'show'])->name('permintaan.cek');
 
-Route::prefix('admin')->group(function () {
+
+Route::prefix('admin')->middleware('auth')->group(function () {
 
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
     // Route::resource('/admin', AdminController::class);
     
+    Route::resource('/art', AnggotaRumahTanggaController::class)->except('create', 'edit');
+    Route::get('/art/show', [AnggotaRumahTanggaController::class, 'show'])->name('art.show');
+    
     Route::resource('/penerima', PenerimaPKHController::class);
+    Route::post('/penerima/update', [PenerimaPKHController::class, 'update'])->name('penerima.update');
+    Route::get('/get-art-data', [PenerimaPKHController::class, 'getArtData'])->name('get.art.data');
+    Route::get('/verifikasi', [PenerimaPKHController::class, 'verifikasi'])->name('verifikasi');
+    Route::get('/cetak/{id}', [PenerimaPKHController::class, 'cetak'])->name('cetak');
+    
+    
+    Route::resource('/aset', KetAsetController::class)->except(['create', 'show', 'store' ,'edit', 'update', 'destroy']);
+    Route::get('/showAset', [KetAsetController::class, 'show'])->name('aset.show');
+    
+    
+    Route::resource('/rumah', AdminKetPerumahanController::class)->except(['create', 'show', 'store', 'edit', 'update', 'destroy']);
+    Route::get('/show', [PenerimaPKHController::class, 'show'])->name('rumah.show');
 
 
 });
+
+Route::prefix('auth')->group(function () {
+    
+    Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
+    Route::post('/login', [AuthController::class, 'cek_login'])->name('auth.login.cek');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+
+    // Route::get('login', function () {
+    //     return view('pages.auth.login', ['menu' => 'auth']);
+    // })->name('auth.login');
+    
+});
+
 
 
 
@@ -326,9 +366,9 @@ Route::prefix('auth')->group(function () {
         return view('pages.auth.forgot-password', ['menu' => 'auth']);
     })->name('auth.forgot-password');
 
-    Route::get('login', function () {
-        return view('pages.auth.login', ['menu' => 'auth']);
-    })->name('auth.login');
+    // Route::get('login', function () {
+    //     return view('pages.auth.login', ['menu' => 'auth']);
+    // })->name('auth.login');
 
     Route::get('login2', function () {
         return view('pages.auth.login2', ['menu' => 'auth']);

@@ -3,9 +3,7 @@
     <a href="/" class="navbar-brand sidebar-gone-hide">{{ $title }}</a>
     <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar"><i class="fas fa-bars"></i></a>
     <div class="nav-collapse">
-        <a class="sidebar-gone-show nav-collapse-toggle nav-link" href="#">
-            <i class="fas fa-ellipsis-v"></i>
-        </a>
+       
        
     </div>
     <form class="form-inline ml-auto">
@@ -24,19 +22,19 @@
     <div class="container">
         <ul class="navbar-nav">
            
-            <li class="nav-item active">
-                <a href="#" class="nav-link"><span>Home</span></a>
+            <li class="nav-item {{ $menu == 'landing' ? 'active' : '' }}">
+                <a href="/" class="nav-link"><span>Home</span></a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item {{ $menu == 'kontak' ? 'active' : '' }}">
                 <a href="#" class="nav-link"><span>Kontak</span></a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item {{ $menu == 'informasi' ? 'active' : '' }}">
                 <a href="#" class="nav-link"><span>Informasi PKH</span></a>
             </li>
-            <li class="nav-item ">
-                <a href="#" class="nav-link"><span>Pendaftaran Calon Penerima PKH</span></a>
+            <li class="nav-item {{ $menu == 'permintaan' ? 'active' : '' }}">
+                <a href="{{ route('permintaan.index') }}" class="nav-link"><span>Pendaftaran Calon Penerima PKH</span></a>
             </li>
-            <li class="nav-item ">
+            <li class="nav-item {{ $menu == 'statistik' ? 'active' : '' }}">
                 <a href="#" class="nav-link"><span>Statistik</span></a>
             </li>
             <li class="nav-item ">

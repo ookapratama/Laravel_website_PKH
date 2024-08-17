@@ -13,6 +13,7 @@ class KetPerumahan extends Model
         'status_lahan',
         'luas_lantai',
         'jenis_lantai',
+        'jenis_dinding',
         'jenis_atap',
         'kondisi_atap',
         'jumlah_kamar',
@@ -24,5 +25,6 @@ class KetPerumahan extends Model
         'jenis_wc',
         'akhir_wc',
         'foto',
+        'kepala_id',
     ];
 }

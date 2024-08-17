@@ -9,7 +9,7 @@ class UserController extends Controller
 {
 
     private $menu;
-    public function __construct($menu = 'dashboard')
+    public function __construct($menu = 'landing')
     {
         $this->menu = $menu;
     }

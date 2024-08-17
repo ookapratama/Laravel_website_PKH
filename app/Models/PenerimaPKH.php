@@ -17,14 +17,14 @@ class PenerimaPKH extends Model
     ];
 
     public function krt() {
-        return $this->hasOne(KepalaRumah::class, 'kepala_id', 'id');
+        return $this->hasOne(KepalaRumah::class, 'id', 'kepala_id');
     }
 
     public function rumah() {
-        return $this->hasOne(KetPerumahan::class, 'perumahan_id', 'id');
+        return $this->hasOne(KetPerumahan::class, 'id', 'perumahan_id');
     }
 
     public function aset() {
-        return $this->hasOne(KetAset::class, 'aset_id', 'id');
+        return $this->hasOne(KetAset::class, 'id', 'aset_id');
     }
 }

@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>{{ $title }} &mdash; SulSel</title>
 
     <!-- General CSS Files -->
@@ -49,6 +51,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="{{ asset('js/stisla.js') }}"></script>
+    <script src="{{ asset('library/sweetalert/dist/sweetalert.min.js') }}"></script>
 
     <!-- JS Libraies -->
     @stack('scripts')
@@ -58,7 +61,16 @@
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
 
-
+    @if (session('message') == 'store permintaan')
+        <script>
+            // iziToast.success({
+            //     title: 'Sukses',
+            //     message: 'Berhasil tambah data',
+            //     position: 'topRight'
+            // });
+            swal("Sukses", "Berhasil ajukan permintaan, silahkan cek status permintaan anda di Menu cek status permintaan", "success");
+        </script>
+    @endif
 </body>
 
 </html>

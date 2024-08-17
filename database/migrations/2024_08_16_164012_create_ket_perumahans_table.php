@@ -17,17 +17,19 @@ return new class extends Migration
             $table->string('status_lahan');
             $table->string('luas_lantai');
             $table->string('jenis_lantai');
+            $table->string('jenis_dinding');
             $table->string('jenis_atap');
-            $table->string('kondisi_atap');
+            $table->string('kondisi_atap')->nullable();
             $table->string('jumlah_kamar');
             $table->string('peroleh_air');
             $table->string('sumber_penerangan');
-            $table->string('watt_listrik');
+            $table->string('watt_listrik')->nullable();
             $table->string('bahan_energi'); // bahan bakar / energi
             $table->string('guna_wc');
             $table->string('jenis_wc');
             $table->string('akhir_wc');
             $table->string('foto');
+            $table->string('kepala_id');
             $table->timestamps();
         });
     }
