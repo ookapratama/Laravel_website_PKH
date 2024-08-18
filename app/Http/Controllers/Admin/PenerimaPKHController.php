@@ -57,6 +57,20 @@ class PenerimaPKHController extends Controller
         //
     }
 
+
+    public function detailAll(Request $request)
+    {
+        $r = $request->all();
+        // dd($r);
+        $krtId = $request->krt_id;
+
+        $artData = AnggotaRumahTangga::where('kepala_id', $krtId)->get();
+        $asetData = KetAset::where('kepala_id', $krtId)->first();
+        $rumahData = KetPerumahan::where('kepala_id', $krtId)->first();
+        // dd($rumahData);
+        return view('pages.admin.penerimaPKH.modal.modal', compact('artData', 'asetData', 'rumahData'));
+    }
+
     /**
      * Display the specified resource.
      */

@@ -117,7 +117,31 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="artModal" tabindex="-1" role="dialog" aria-labelledby="artModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalAll" tabindex="-1" role="dialog" aria-labelledby="artModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="artModalLabel">Detail Kepala Rumah Tangga</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Table to display ART details will be dynamically loaded here -->
+                    <div id="tableAll">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="artModal" tabindex="-1" role="dialog" aria-labelledby="artModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -247,6 +271,35 @@
             });
         </script>
         @if (isset($data->krt->id))
+            {{-- show all --}}
+            <script>
+                $('#modalAll').on('show.bs.modal', function(event) {
+                    var button = $(event.relatedTarget) // Button that triggered the modal
+                    var krtId = button.data('krt-id') // Extract info from data-* attributes
+                    var modal = $(this)
+
+                    // AJAX request to fetch ART data
+                    $.ajax({
+                        url: "{{ route('detailAll') }}", // Route to fetch data
+                        method: 'GET',
+                        data: {
+                            krt_id: krtId
+                        },
+                        success: function(response) {
+                            // Load the response (HTML table) into the modal's body
+                            modal.find('#tableAll').html(response);
+                        },
+                        error: function() {
+                            modal.find('#tableAll').html('<p>Error loading data</p>');
+                        }
+                    });
+
+
+
+
+                });
+            </script>
+
             <script>
                 $('#artModal').on('show.bs.modal', function(event) {
                     var button = $(event.relatedTarget) // Button that triggered the modal

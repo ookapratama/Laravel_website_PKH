@@ -50,6 +50,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/get-art-data', [PenerimaPKHController::class, 'getArtData'])->name('get.art.data')->withoutMiddleware(['auth']);
     Route::get('/verifikasi', [PenerimaPKHController::class, 'verifikasi'])->name('verifikasi');
     Route::get('/cetak/{id}', [PenerimaPKHController::class, 'cetak'])->name('cetak');
+    Route::get('/detailAll', [PenerimaPKHController::class, 'detailAll'])->name('detailAll')->withoutMiddleware(['auth']);
     
     
     Route::resource('/aset', KetAsetController::class)->except(['create', 'show', 'store' ,'edit', 'update', 'destroy']);

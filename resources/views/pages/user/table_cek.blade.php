@@ -14,9 +14,11 @@
                 <th class="text-nowrap">Penyakit kronis</th>
                 <th class="text-nowrap">Jenis cacat</th>
                 <th class="text-nowrap">Status</th>
-                <th class="text-nowrap">Detail ART</th>
+                {{-- <th class="text-nowrap">Detail ART</th>
                 <th class="text-nowrap">Detail Perumahan</th>
-                <th class="text-nowrap">Detail Aset</th>
+                <th class="text-nowrap">Detail Aset</th> --}}
+                <th class="text-nowrap">Detail Data</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -41,7 +43,7 @@
                             <span class="badge badge-warning">Belum diproses</span>
                         @endif
                     </td>
-                    <td class="text-center">
+                    {{-- <td class="text-center">
                         <button type="button" class="btn btn-info my-2" data-toggle="modal" data-target="#artModal"
                             data-krt-id="{{ $data->krt->id }}">
                             <i class="fas fa-users"></i>
@@ -58,7 +60,16 @@
                             data-krt-id="{{ $data->krt->id }}">
                             <i class="fas fa-landmark"></i>
                         </button>
+                    </td> --}}
+
+                    <td class="text-center">
+                        <!-- Tombol untuk Aset -->
+                        <button type="button" class="btn btn-info my-2" data-toggle="modal"
+                            data-target="#modalAll" data-krt-id="{{ $data->krt->id }}">
+                            <i class="fas fa-info"></i>
+                        </button>
                     </td>
+
                 </tr>
             @endforeach
         </tbody>
