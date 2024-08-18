@@ -20,6 +20,13 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('rt');
             $table->string('rw');
+            $table->string('pendidikan_terakhir');
+            $table->string('pekerjaan');
+            $table->string('tempat_lahir');
+            $table->date('tgl_lahir');
+            $table->string('penghasilan_perbulan');
+            $table->string('riwayat_penyakit');
+            $table->string('jenis_cacat');
             // $table->string('kabupaten');
             // $table->string('kecamatan');
             $table->integer('jumlah_art');

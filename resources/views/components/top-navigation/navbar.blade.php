@@ -34,9 +34,9 @@
             <li class="nav-item {{ $menu == 'permintaan' ? 'active' : '' }}">
                 <a href="{{ route('permintaan.index') }}" class="nav-link"><span>Pendaftaran Calon Penerima PKH</span></a>
             </li>
-            <li class="nav-item {{ $menu == 'statistik' ? 'active' : '' }}">
+            {{-- <li class="nav-item {{ $menu == 'statistik' ? 'active' : '' }}">
                 <a href="/statistik" class="nav-link"><span>Statistik</span></a>
-            </li>
+            </li> --}}
             <li class="nav-item ">
                 <a href="{{ route('dashboard') }}" class="nav-link"><span>Login</span></a>
             </li>

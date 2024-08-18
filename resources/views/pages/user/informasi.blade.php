@@ -1,4 +1,4 @@
-@extends('layouts.user.app', ['title' => 'Website PKH Kabupaten Barru'])
+@extends('layouts.user.app', ['title' => 'Website PKH Kelurahan Mangkoso'])
 
 @section('content')
     @push('styles')
@@ -7,7 +7,7 @@
     <div class="main-content ">
         <section class="section">
             <div class="section-header">
-                <h1>Sistem Pengajuan PKH Kabupaten Barru</h1>
+                <h1>Sistem Pengajuan PKH Kelurahan Mangkoso</h1>
 
             </div>
 

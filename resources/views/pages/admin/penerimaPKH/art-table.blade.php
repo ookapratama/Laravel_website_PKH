@@ -9,7 +9,12 @@
                 <th>NIK</th>
                 <th>Hubungan</th>
                 <th>Jenis Kelamin</th>
-                <th>Umur</th>
+                <th>Tempat, tanggal lahir</th>
+                <th>Hubungan</th>
+                <th>Pekerjaan</th>
+                <th>Penghasilan perbulan</th>
+                <th>Jenis cacat</th>
+                <th>Pendidikan</th>
                 {{-- <th>Aksi</th> --}}
             </tr>
         </thead>
@@ -21,7 +26,12 @@
                     <td>{{ $v->nik }}</td>
                     <td>{{ $v->hubungan }}</td>
                     <td>{{ $v->jkl }}</td>
-                    <td>{{ $v->umur }}</td>
+                    <td>{{ $v->tempat_lahir }}, {{ $v->tgl_lahir }}</td>
+                    <td>{{ $v->hubungan }}</td>
+                    <td>{{ $v->pekerjaan }}</td>
+                    <td>{{ $v->penghasilan_perbulan }}</td>
+                    <td>{{ $v->jenis_cacat }}</td>
+                    <td>{{ $v->jenjang_pendidikan }}</td>
                     {{-- <td>
                         <!-- Actions like Edit/Delete for each ART -->
                         <a href="#" class="btn btn-warning btn-sm">Edit</a>

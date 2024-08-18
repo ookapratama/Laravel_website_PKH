@@ -37,26 +37,27 @@ Route::get('/permintaan/show', [Penerima::class, 'show'])->name('permintaan.cek'
 
 
 Route::prefix('admin')->middleware('auth')->group(function () {
-
+    
     Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/statistik', [AdminController::class, 'statistik'])->name('admin.statistik');
     // Route::resource('/admin', AdminController::class);
     
     Route::resource('/art', AnggotaRumahTanggaController::class)->except('create', 'edit');
-    Route::get('/art/show', [AnggotaRumahTanggaController::class, 'show'])->name('art.show');
+    Route::get('/art/show', [AnggotaRumahTanggaController::class, 'show'])->name('art.show')->withoutMiddleware(['auth']);
     
     Route::resource('/penerima', PenerimaPKHController::class);
     Route::post('/penerima/update', [PenerimaPKHController::class, 'update'])->name('penerima.update');
-    Route::get('/get-art-data', [PenerimaPKHController::class, 'getArtData'])->name('get.art.data');
+    Route::get('/get-art-data', [PenerimaPKHController::class, 'getArtData'])->name('get.art.data')->withoutMiddleware(['auth']);
     Route::get('/verifikasi', [PenerimaPKHController::class, 'verifikasi'])->name('verifikasi');
     Route::get('/cetak/{id}', [PenerimaPKHController::class, 'cetak'])->name('cetak');
     
     
     Route::resource('/aset', KetAsetController::class)->except(['create', 'show', 'store' ,'edit', 'update', 'destroy']);
-    Route::get('/showAset', [KetAsetController::class, 'show'])->name('aset.show');
+    Route::get('/showAset', [KetAsetController::class, 'show'])->name('aset.show')->withoutMiddleware(['auth']);
     
     
     Route::resource('/rumah', AdminKetPerumahanController::class)->except(['create', 'show', 'store', 'edit', 'update', 'destroy']);
-    Route::get('/show', [PenerimaPKHController::class, 'show'])->name('rumah.show');
+    Route::get('/show', [PenerimaPKHController::class, 'show'])->name('rumah.show')->withoutMiddleware(['auth']);
 
 
 });

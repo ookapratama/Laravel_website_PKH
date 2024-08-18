@@ -7,11 +7,13 @@
 <p>Jumlah Kamar: {{ $datas->jumlah_kamar }}</p>
 <p>Perolehan Air: {{ $datas->peroleh_air }}</p>
 <p>Sumber Penerangan: {{ $datas->sumber_penerangan }}</p>
+@if ($datas->sumber_penerangan == 'Listrik')
+    <p>Jumlah watt : {{ $datas->watt_listrik }}</p>
+@endif
 <p>Bahan Energi: {{ $datas->bahan_energi }}</p>
 <p>Guna WC: {{ $datas->guna_wc }}</p>
 <p>Jenis WC: {{ $datas->jenis_wc }}</p>
 <p>Akhir WC: {{ $datas->akhir_wc }}</p>
 <p>Foto:
-    <img src="{{ asset('upload/rumah/'. $datas->foto) }}" alt="Foto Rumah"
-        width="250">
+    <img src="{{ asset('upload/rumah/' . $datas->foto) }}" alt="Foto Rumah" width="250">
 </p>

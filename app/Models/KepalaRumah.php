@@ -16,12 +16,20 @@ class KepalaRumah extends Model
         'alamat',
         'rt',
         'rw',
+        'pendidikan_terakhir',
+        'pekerjaan',
+        'tempat_lahir',
+        'tgl_lahir',
+        'penghasilan_perbulan',
+        'riwayat_penyakit',
+        'jenis_cacat',
         // 'kabupaten',
         // 'kecamatan',
         'jumlah_art',
     ];
 
-    public function art() {
+    public function art()
+    {
         return $this->hasMany(AnggotaRumahTangga::class, '');
     }
 }

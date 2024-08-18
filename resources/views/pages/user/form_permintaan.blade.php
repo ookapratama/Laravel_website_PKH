@@ -36,7 +36,7 @@
 
 
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <div class="form-group">
                             <label>Jenis Kelamin</label>
                             <select required name="jkl" class="form-control ">
@@ -46,13 +46,30 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Alamat </label>
                             <input required type="text" name="alamat" class="form-control"
                                 placeholder="isi dengan lengkap ">
                         </div>
                     </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Tempat Lahir </label>
+                            <input required type="text" name="tempat_lahir" class="form-control"
+                                placeholder="isi dengan lengkap ">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Tanggal Lahir</label>
+                            <input required type="date" name="tgl_lahir" class="form-control"
+                                placeholder="isi dengan lengkap ">
+                        </div>
+                    </div>
+
+
+
 
                 </div>
 
@@ -71,6 +88,80 @@
                                 class="form-control">
                         </div>
                     </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Pendidikan terakhir </label>
+
+                            <select name="pendidikan_terakhir" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option value="Tidak punya ijazah">Tidak punya ijazah</option>
+                                <option value="SD/Sederajat">SD/Sederajat</option>
+                                <option value="SMP/Sederajat">SMP/Sederajat</option>
+                                <option value="SMA/Sederajat">SMA/Sederajat</option>
+                                <option value="D1/D2/D3">D1/D2/D3</option>
+                                <option value="D4/S1">D4/S1</option>
+                                <option value="S2/S3">S2/S3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Penghasilan Bulanan</label>
+                            <input required type="text" name="penghasilan_perbulan" class="form-control currency">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Pekerjaan </label>
+                            <select required name="pekerjaan" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option value="Petani">Petani</option>
+                                <option value="Pekebun">Pekebun</option>
+                                <option value="Peternak">Peternak</option>
+                                <option value="Kuli bangunan">Kuli bangunan</option>
+                                <option value="Pedagang">Pedagang</option>
+                                <option value="Jasa pendidikan">Jasa pendidikan</option>
+                                <option value="Jasa kesehatan">Jasa kesehatan</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Penyakit kronis/menahun</label>
+                            {{-- <input required type="text" name="riwayat_penyakit" class="form-control "> --}}
+                            <select required name="riwayat_penyakit" class="form-control">
+                                <option value="">-- Pilih Penyakit kronis/menahun --</option>
+                                <option value="Tidak ada">Tidak ada</option>
+                                <option value="Hipertensi">Hipertensi</option>
+                                <option value="Rematik">Rematik</option>
+                                <option value="Asma">Asma</option>
+                                <option value="Masalah jantung">Masalah jantung</option>
+                                <option value="Diabetes">Diabetes</option>
+                                <option value="Tuberculosis">Tuberculosis</option>
+                                <option value="Stroke">Stroke</option>
+                                <option value="Kanker atau tumor ganas">Kanker atau tumor ganas</option>
+                                <option value="Lainnya (gagal ginjal, paru-paru flek, dan sejenisnya)">Lainnya (gagal
+                                    ginjal, paru-paru flek, dan sejenisnya)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Jenis cacat</label>
+                            <input required type="text" name="jenis_cacat" class="form-control">
+                        </div>
+                    </div>
+
+
                 </div>
 
                 <hr>
@@ -176,7 +267,28 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Sumber penerangan utama</label>
-                            <input required type="text" required name="sumber_penerangan" class="form-control">
+                            <select required name="sumber_penerangan" id="sumber_penerangan" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option value="Listrik">Listrik</option>
+                                <option value="Listrik non PLN">Listrik non PLN</option>
+                                <option value="Bukan listrik">Bukan listrik</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3" id="watt_listrik" style="display: none">
+                        <div class="form-group">
+                            <label>Jumlah watt</label>
+                            <select required name="watt_listrik"  class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option value="150 watt">150 watt</option>
+                                <option value="900 watt">900 watt</option>
+                                <option value="1300 watt">1300 watt</option>
+                                <option value="2200 watt">2200 watt</option>
+                                <option value="> 2200 watt">> 2200 watt</option>
+                                <option value="Tanpa meteran">Tanpa meteran</option>
+                            </select>
 
                         </div>
                     </div>
@@ -222,7 +334,15 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Tempat pembuangan akhir tinja</label>
-                            <input required type="text" required name="akhir_wc" class="form-control">
+                            <select required name="akhir_wc" id="akhir_wc" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option value="Tangki">Tangki</option>
+                                <option value="SPAL">SPAL</option>
+                                <option value="Lubang tanah">Lubang tanah</option>
+                                <option value="Kolam/sungai/sawah/danau/laut">Kolam/sungai/sawah/danau/laut</option>
+                                <option value="Tanah lapang/kebun">Tanah lapang/kebun</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
 
                         </div>
                     </div>
@@ -308,32 +428,32 @@
 
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label>Jumlah</label>
+                            <label>Jumlah Ternak</label>
                             <input type="text" required name="jumlah_ternak" class="form-control">
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    {{-- <div class="col-md-3">
                         <div class="form-group">
                             <label>ART Memiliki usaha sendiri/bersama</label>
-                            <select required name="have_usaha" class="form-control">
+                            <select  name="have_usaha" class="form-control">
                                 <option value="">-- Pilih --</option>
                                 <option value="Ya">Ya</option>
                                 <option value="Tidak">Tidak</option>
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Penghasilan Bulanan</label>
                             <input type="text" name="penghasilan_bulanan" class="form-control currency">
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
 
 
@@ -366,6 +486,17 @@
 </div>
 
 <script>
+    const penerangan = document.getElementById('sumber_penerangan');
+    const watt = document.getElementById('watt_listrik');
+
+    penerangan.addEventListener('change', function() {
+        if (penerangan.value === 'Listrik') {
+            watt.style.display = 'block';
+        } else {
+            watt.style.display = 'none';
+        }
+    });
+
     function generateARTForms() {
         const container = document.getElementById('artFormsContainer');
         const jumlahART = document.getElementById('jumlah_art').value;
@@ -394,7 +525,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Hubungan dengan Kepala Keluarga</label>
-                                 <select required name="hubungan_art_${i}" class="form-control">
+                                 <select required name="hubungan_art_${i}" id="hubungan_art_${i}" class="form-control">
                                     <option value="">-- Pilih Hubungan dengan Kepala Keluarga --</option>
                                     <option value="Kepala rumah tangga">Kepala rumah tangga</option>
                                     <option value="Istri/Suami">Istri/Suami</option>
@@ -419,54 +550,29 @@
                         </div>
                     </div>
                     <div class="row">
+                        
+                        
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Umur</label>
-                                <input required name="umur_art_${i}" type="string" class="form-control">
+                                <label>Tempat Lahir </label>
+                                <input required type="text" name="tempat_lahir_art_${i}" class="form-control"
+                                    placeholder="isi dengan lengkap ">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Status Perkawinan</label>
-                                <select required name="status_kawin_art_${i}" class="form-control">
-                                    <option value="">-- Pilih Status Kawin --</option>
-                                    <option value="Belum Kawin">Belum Kawin</option>
-                                    <option value="Kawin/nikah">Kawin/nikah</option>
-                                    <option value="Cerai hidup">Cerai hidup</option>
-                                    <option value="Cerai mati">Cerai mati</option>
-                                </select>
+                                <label>Tanggal Lahir</label>
+                                <input required type="date" name="tgl_lahir_art_${i}" class="form-control"
+                                    placeholder="isi dengan lengkap ">
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Kepemilikan Akta</label>
-                                <select required name="kepemilikan_akta_art_${i}" class="form-control">
-                                    <option value="">-- Pilih Kepemilikan Akta --</option>
-                                    <option value="Tidak">Tidak</option>
-                                    <option value="Ya, dapat ditunjukkan">Ya, dapat ditunjukkan</option>
-                                    <option value="Ya, tidak dapat ditunjukkan">Ya, tidak dapat ditunjukkan</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label>Kartu Identitas</label>
-                                <select required name="kartu_identitas_art_${i}" class="form-control">
-                                    <option value="">-- Pilih Kartu Identitas --</option>
-                                    <option value="Tidak memiliki">Tidak memiliki</option>
-                                    <option value="Akta kelahiran">Akta kelahiran</option>
-                                    <option value="Kartu pelajar">Kartu pelajar</option>
-                                    <option value="KTP">KTP</option>
-                                    <option value="SIM">SIM</option>
-                                </select>
-                            </div>
-                        </div>
+                    
                     </div>
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label>Status Kehamilan (opsional)</label>
-                                <select  name="status_kehamilan_art_${i}" class="form-control">
+                                <select  name="status_kehamilan_art_${i}" id="status_kehamilan_art_${i}" class="form-control">
                                     <option value="">-- Pilih Status Kehamilan --</option>
                                     <option value="Ya">Ya</option>
                                     <option value="Tidak">Tidak</option>
@@ -493,6 +599,12 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
+                                <label>Jenis cacat</label>
+                                <input required type="text" name="jenis_cacat_art_${i}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
                                 <label>Partisipasi Sekolah </label>
                                 <select required name="partisipasi_sekolah_art_${i}" class="form-control">
                                     <option value="">-- Pilih Partisipasi Sekolah --</option>
@@ -504,7 +616,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Jenjang Pendidikan(opsional) </label>
+                                <label>Jenjang Pendidikan saat ini(opsional) </label>
                                 
                                  <select  name="jenjang_pendidikan_art_${i}" class="form-control">
                                     <option value="">-- Pilih ijazah --</option>
@@ -542,24 +654,81 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Pekerjaan Utama</label>
-                                <input required name="pekerjaan_art_${i}" type="text" class="form-control">
+                                <label>Pekerjaan Utama (opsional)</label>
+                                <select  name="pekerjaan_art_${i}" id="pekerjaan_art_${i}" class="form-control">
+                                    <option value="">-- Pilih --</option>
+                                    <option value="Petani">Petani</option>
+                                    <option value="Pekebun">Pekebun</option>
+                                    <option value="Peternak">Peternak</option>
+                                    <option value="Kuli bangunan">Kuli bangunan</option>
+                                    <option value="Pedagang">Pedagang</option>
+                                    <option value="Jasa pendidikan">Jasa pendidikan</option>
+                                    <option value="Jasa kesehatan">Jasa kesehatan</option>
+                                    <option value="Lainnya">Lainnya</option>
+                                </select>
                                 
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6" id="penghasilan_${i}" style="display:none;">
                             <div class="form-group">
-                                <label>Kedudukan Pekerjaan</label>
-                                <input required name="kedudukan_pekerjaan_art_${i}" type="text" class="form-control">
+                                <label>Penghasilan Perbulan</label>
+                                <input type="text" name="penghasilan_perbulan_art_${i}" class="form-control " id="penghasilan_perbulan_${i}" placeholder="Isi dengan nominal">
                             </div>
                         </div>
                     </div>
+                   
                 </div>
             </div>
-        `;
+            `;
+
             container.insertAdjacentHTML('beforeend', artForm);
+
+            // Event listener untuk menampilkan atau menyembunyikan status kehamilan
+            const hubunganElement = document.getElementById(`hubungan_art_${i}`);
+            const statusHamilElement = document.getElementById(`status_kehamilan_art_${i}`);
+            statusHamilElement.parentElement.style.display = 'none'
+            hubunganElement.addEventListener('change', function() {
+                if (hubunganElement.value === 'Istri/Suami') {
+                    statusHamilElement.parentElement.style.display = 'block';
+                } else {
+                    statusHamilElement.parentElement.style.display = 'none';
+                }
+            });
+
+            // Event listener untuk menampilkan input penghasilan perbulan jika pekerjaan dipilih
+            const pekerjaanElement = document.getElementById(`pekerjaan_art_${i}`);
+            const penghasilanElement = document.getElementById(`penghasilan_${i}`);
+            const penghasilanInput = document.getElementById(`penghasilan_perbulan_${i}`);
+
+            pekerjaanElement.addEventListener('change', function() {
+                if (pekerjaanElement.value !== '') {
+                    penghasilanElement.style.display = 'block';
+                } else {
+                    penghasilanInput.value = ''
+                    penghasilanElement.style.display = 'none';
+                }
+            });
+
+            // Event listener untuk memformat penghasilan sebagai Rupiah
+            penghasilanInput.addEventListener('keyup', function(e) {
+                penghasilanInput.value = formatRupiah(this.value);
+            });
+        }
+
+        function formatRupiah(angka, prefix = 'Rp. ') {
+            const numberString = angka.replace(/[^,\d]/g, '').toString();
+            const split = numberString.split(',');
+            const sisa = split[0].length % 3;
+            let rupiah = split[0].substr(0, sisa);
+            const ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+            if (ribuan) {
+                const separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return prefix + rupiah;
         }
     }
 </script>

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('luas_lahan');
             $table->string('have_ternak');
             $table->string('jumlah_ternak');
-            $table->string('have_usaha');
-            $table->string('penghasilan_bulanan');
+            $table->string('have_usaha')->nullable();
+            $table->string('penghasilan_bulanan')->nullable();
             $table->string('kepala_id');
             $table->timestamps();
         });

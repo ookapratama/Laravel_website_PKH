@@ -97,26 +97,26 @@ class PenerimaPKHController extends Controller
         $r = $r->all();
         $data = PenerimaPKH::findOrFail($id);
         // dd($data);
-        
-        
+
+
         $getKepala = KepalaRumah::where('id', $data->kepala_id)->first();
-        
-        
+
+
         $getArt = AnggotaRumahTangga::where('kepala_id', $getKepala->id)->get();
         // dd($getArt);
-        
+
 
         $getAset = KetAset::where('id', $data->aset_id)->first();
-        
-        
+
+
         $getRumah = KetPerumahan::where('id', $data->perumahan_id)->first();
-        
+
 
 
 
         // Load the view with the data
         $pdf = Pdf::loadView('pages.admin.penerimaPKH.cetak', compact('data', 'getArt', 'getAset', 'getRumah', 'getKepala'))
-        ->setPaper('a3', 'landscape');;
+            ->setPaper('a3', 'landscape');;
 
         // Download the PDF
         return $pdf->download('data-permintaan-PKH.pdf');
@@ -128,6 +128,7 @@ class PenerimaPKHController extends Controller
     public function update(Request $request)
     {
         $r = $request->all();
+        // dd($r);
         // Find the existing KepalaRumah record by ID and update it
         $kepalaRumah = KepalaRumah::find($r['id']);
         $kepalaRumah->update($r);
@@ -165,21 +166,25 @@ class PenerimaPKHController extends Controller
             // Add updated ART records
             for ($i = 1; $i <= $jumlahART; $i++) {
                 $anggota = new AnggotaRumahTangga([
-                    'nama' => $request->input("nama_art_$i"),
-                    'nik' => $request->input("nik_art_$i"),
-                    'hubungan' => $request->input("hubungan_art_$i"),
-                    'jkl' => $request->input("jkl_art_$i"),
-                    'umur' => $request->input("umur_art_$i"),
-                    'status_kawin' => $request->input("status_kawin_art_$i"),
-                    'kepemilikan_akta' => $request->input("kepemilikan_akta_art_$i"),
-                    'kartu_identitas' => $request->input("kartu_identitas_art_$i"),
-                    'status_kehamilan' => $request->input("status_kehamilan_art_$i"),
-                    'riwayat_penyakit' => $request->input("riwayat_penyakit_art_$i"),
-                    'partisipasi_sekolah' => $request->input("partisipasi_sekolah_art_$i"),
-                    'jenjang_pendidikan' => $request->input("jenjang_pendidikan_art_$i"),
-                    'ijazah' => $request->input("ijazah_art_$i"),
-                    'pekerjaan' => $request->input("pekerjaan_art_$i"),
-                    'kedudukan_pekerjaan' => $request->input("kedudukan_pekerjaan_art_$i"),
+                    'tempat_lahir' => $request->input("tempat_lahir_art_$i") ?? '',
+                    'tgl_lahir' => $request->input("tgl_lahir_art_$i") ?? '',
+                    'jenis_cacat' => $request->input("jenis_cacat_art_$i") ?? '',
+                    'penghasilan_perbulan' => $request->input("penghasilan_perbulan_art_$i") ?? '',
+                    'nama' => $request->input("nama_art_$i") ?? '',
+                    'nik' => $request->input("nik_art_$i") ?? '',
+                    'hubungan' => $request->input("hubungan_art_$i") ?? '',
+                    'jkl' => $request->input("jkl_art_$i") ?? '',
+                    'umur' => $request->input("umur_art_$i") ?? '',
+                    'status_kawin' => $request->input("status_kawin_art_$i") ?? '',
+                    'kepemilikan_akta' => $request->input("kepemilikan_akta_art_$i") ?? '',
+                    'kartu_identitas' => $request->input("kartu_identitas_art_$i") ?? '',
+                    'status_kehamilan' => $request->input("status_kehamilan_art_$i") ?? '',
+                    'riwayat_penyakit' => $request->input("riwayat_penyakit_art_$i") ?? '',
+                    'partisipasi_sekolah' => $request->input("partisipasi_sekolah_art_$i") ?? '',
+                    'jenjang_pendidikan' => $request->input("jenjang_pendidikan_art_$i") ?? '',
+                    'ijazah' => $request->input("ijazah_art_$i") ?? '',
+                    'pekerjaan' => $request->input("pekerjaan_art_$i") ?? '',
+                    'kedudukan_pekerjaan' => $request->input("kedudukan_pekerjaan_art_$i") ?? '',
                     'kepala_id' => $kepalaRumah->id,
                 ]);
 

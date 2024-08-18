@@ -59,13 +59,29 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md">
+                    <div class="col-md-4">
                         <div class="form-group">
                             <label>Alamat </label>
                             <input required value="{{ $datas->krt->alamat }}" type="text" name="alamat"
                                 class="form-control" placeholder="isi dengan lengkap ">
                         </div>
                     </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Tempat Lahir </label>
+                            <input value="{{ $datas->krt->tempat_lahir }}" required type="text" name="tempat_lahir"
+                                class="form-control" placeholder="isi dengan lengkap ">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Tanggal Lahir</label>
+                            <input value="{{ $datas->krt->tgl_lahir }}" required type="date" name="tgl_lahir"
+                                class="form-control" placeholder="isi dengan lengkap ">
+                        </div>
+                    </div>
+
 
                 </div>
 
@@ -84,6 +100,111 @@
                                 placeholder="00X" name="rw" class="form-control">
                         </div>
                     </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Pendidikan terakhir </label>
+
+                            <select name="pendidikan_terakhir" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option
+                                    {{ $datas->krt->pendidikan_terakhir == 'Tidak punya ijazah' ? 'selected' : '' }}
+                                    value="Tidak punya ijazah">Tidak punya ijazah</option>
+                                <option {{ $datas->krt->pendidikan_terakhir == 'SD/Sederajat' ? 'selected' : '' }}
+                                    value="SD/Sederajat">SD/Sederajat</option>
+                                <option {{ $datas->krt->pendidikan_terakhir == 'SMP/Sederajat' ? 'selected' : '' }}
+                                    value="SMP/Sederajat">SMP/Sederajat</option>
+                                <option {{ $datas->krt->pendidikan_terakhir == 'SMA/Sederajat' ? 'selected' : '' }}
+                                    value="SMA/Sederajat">SMA/Sederajat</option>
+                                <option {{ $datas->krt->pendidikan_terakhir == 'D1/D2/D3' ? 'selected' : '' }}
+                                    value="D1/D2/D3">D1/D2/D3</option>
+                                <option {{ $datas->krt->pendidikan_terakhir == 'D4/S1' ? 'selected' : '' }}
+                                    value="D4/S1">D4/S1</option>
+                                <option {{ $datas->krt->pendidikan_terakhir == 'S2/S3' ? 'selected' : '' }}
+                                    value="S2/S3">S2/S3</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Penghasilan Bulanan</label>
+                            <input value="{{ $datas->krt->penghasilan_perbulan }}" required type="text"
+                                name="penghasilan_perbulan" class="form-control currency">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Pekerjaan </label>
+                            <select required name="pekerjaan" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option {{ $datas->krt->pekerjaan == 'Petani' ? 'selected' : '' }} value="Petani">
+                                    Petani</option>
+                                <option {{ $datas->krt->pekerjaan == 'Pekebun' ? 'selected' : '' }} value="Pekebun">
+                                    Pekebun</option>
+                                <option {{ $datas->krt->pekerjaan == 'Peternak' ? 'selected' : '' }} value="Peternak">
+                                    Peternak</option>
+                                <option {{ $datas->krt->pekerjaan == 'Kuli bangunan' ? 'selected' : '' }}
+                                    value="Kuli bangunan">Kuli bangunan</option>
+                                <option {{ $datas->krt->pekerjaan == 'Pedagang' ? 'selected' : '' }} value="Pedagang">
+                                    Pedagang</option>
+                                <option {{ $datas->krt->pekerjaan == 'Jasa pendidikan' ? 'selected' : '' }}
+                                    value="Jasa pendidikan">Jasa pendidikan</option>
+                                <option {{ $datas->krt->pekerjaan == 'Jasa kesehatan' ? 'selected' : '' }}
+                                    value="Jasa kesehatan">Jasa kesehatan</option>
+                                <option {{ $datas->krt->pekerjaan == 'Lainnya' ? 'selected' : '' }} value="Lainnya">
+                                    Lainnya</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Penyakit kronis/menahun</label>
+                            {{-- <input required type="text" name="riwayat_penyakit" class="form-control "> --}}
+                            <select required name="riwayat_penyakit" class="form-control">
+                                <option value="">-- Pilih Penyakit kronis/menahun --</option>
+                                <option {{ $datas->krt->riwayat_penyakit == 'Tidak ada' ? 'selected' : '' }}
+                                    value="Tidak ada">Tidak ada</option>
+                                <option {{ $datas->krt->riwayat_penyakit == 'Hipertensi' ? 'selected' : '' }}
+                                    value="Hipertensi">Hipertensi</option>
+                                <option {{ $datas->krt->riwayat_penyakit == 'Rematik' ? 'selected' : '' }}
+                                    value="Rematik">Rematik</option>
+                                <option {{ $datas->krt->riwayat_penyakit == 'Asma' ? 'selected' : '' }}
+                                    value="Asma">Asma</option>
+                                <option {{ $datas->krt->riwayat_penyakit == 'Masalah jantung' ? 'selected' : '' }}
+                                    value="Masalah jantung">Masalah jantung</option>
+                                <option {{ $datas->krt->riwayat_penyakit == 'Diabetes' ? 'selected' : '' }}
+                                    value="Diabetes">Diabetes</option>
+                                <option {{ $datas->krt->riwayat_penyakit == 'Tuberculosis' ? 'selected' : '' }}
+                                    value="Tuberculosis">Tuberculosis</option>
+                                <option {{ $datas->krt->riwayat_penyakit == 'Stroke' ? 'selected' : '' }}
+                                    value="Stroke">Stroke</option>
+                                <option
+                                    {{ $datas->krt->riwayat_penyakit == 'Kanker atau tumor ganas' ? 'selected' : '' }}
+                                    value="Kanker atau tumor ganas">Kanker atau tumor ganas</option>
+                                <option
+                                    {{ $datas->krt->riwayat_penyakit == 'Lainnya (gagal ginjal, paru-paru flek, dan sejenisnya)' ? 'selected' : '' }}
+                                    value="Lainnya (gagal ginjal, paru-paru flek, dan sejenisnya)">Lainnya (gagal
+                                    ginjal, paru-paru flek, dan sejenisnya)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Jenis cacat</label>
+                            <input value="{{ $datas->krt->jenis_cacat }}" required type="text" name="jenis_cacat"
+                                class="form-control">
+                        </div>
+                    </div>
+
+
                 </div>
 
                 <hr>
@@ -136,7 +257,7 @@
                             <label>Jenis lantai</label>
                             <select required name="jenis_lantai" class="form-control">
                                 <option value="">-- Pilih --</option>
-                                <option {{ $datas->rumah->jenis_lantai == 'Marmer/granir' ? 'selected' : '' }}
+                                <option {{ $datas->rumah->jenis_lantai == 'Marmer/granit' ? 'selected' : '' }}
                                     value="Marmer/granit">Marmer/granit</option>
                                 <option {{ $datas->rumah->jenis_lantai == 'Keramik' ? 'selected' : '' }}
                                     value="Keramik">Keramik</option>
@@ -219,8 +340,36 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Sumber penerangan utama</label>
-                            <input value="{{ $datas->rumah->sumber_penerangan }}" required type="text" required
-                                name="sumber_penerangan" class="form-control">
+                            <select required name="sumber_penerangan" id="sumber_penerangan" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option {{ $datas->rumah->sumber_penerangan == 'Listrik' ? 'selected' : '' }}
+                                    value="Listrik">Listrik</option>
+                                <option {{ $datas->rumah->sumber_penerangan == 'Listrik non PLN' ? 'selected' : '' }}
+                                    value="Listrik non PLN">Listrik non PLN</option>
+                                <option {{ $datas->rumah->sumber_penerangan == 'Bukan listrik ' ? 'selected' : '' }}
+                                    value="Bukan listrik">Bukan listrik</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3" id="watt_listrik" style="display: none">
+                        <div class="form-group">
+                            <label>Jumlah watt</label>
+                            <select required name="watt_listrik" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option {{ $datas->rumah->watt_listrik == '150 watt' ? 'selected' : '' }}
+                                    value="150 watt">150 watt</option>
+                                <option {{ $datas->rumah->watt_listrik == '600 watt' ? 'selected' : '' }}
+                                    value="900 watt">900 watt</option>
+                                <option {{ $datas->rumah->watt_listrik == '1300 watt' ? 'selected' : '' }}
+                                    value="1300 watt">1300 watt</option>
+                                <option {{ $datas->rumah->watt_listrik == '2200 watt' ? 'selected' : '' }}
+                                    value="2200 watt">2200 watt</option>
+                                <option {{ $datas->rumah->watt_listrik == '> 2200 watt' ? 'selected' : '' }}
+                                    value="> 2200 watt">> 2200 watt</option>
+                                <option {{ $datas->rumah->watt_listrik == 'Tanpa meteran' ? 'selected' : '' }}
+                                    value="Tanpa meteran">Tanpa meteran</option>
+                            </select>
 
                         </div>
                     </div>
@@ -275,8 +424,22 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Tempat pembuangan akhir tinja</label>
-                            <input value="{{ $datas->rumah->akhir_wc }}" required type="text" required
-                                name="akhir_wc" class="form-control">
+                            <select required name="akhir_wc" id="akhir_wc" class="form-control">
+                                <option value="">-- Pilih --</option>
+                                <option {{ $datas->rumah->akhir_wc == 'Tangki' ? 'selected' : '' }} value="Tangki">
+                                    Tangki</option>
+                                <option {{ $datas->rumah->akhir_wc == 'SPAL' ? 'selected' : '' }} value="SPAL">SPAL
+                                </option>
+                                <option {{ $datas->rumah->akhir_wc == 'Lubang tanah' ? 'selected' : '' }}
+                                    value="Lubang tanah">Lubang tanah</option>
+                                <option
+                                    {{ $datas->rumah->akhir_wc == 'Kolam/sungai/sawah/danau/laut' ? 'selected' : '' }}
+                                    value="Kolam/sungai/sawah/danau/laut">Kolam/sungai/sawah/danau/laut</option>
+                                <option {{ $datas->rumah->akhir_wc == 'Tanah lapang/kebun' ? 'selected' : '' }}
+                                    value="Tanah lapang/kebun">Tanah lapang/kebun</option>
+                                <option {{ $datas->rumah->akhir_wc == 'Lainnya' ? 'selected' : '' }} value="Lainnya">
+                                    Lainnya</option>
+                            </select>
 
                         </div>
                     </div>
@@ -383,7 +546,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3">
+                    {{-- <div class="col-md-3">
                         <div class="form-group">
                             <label>ART Memiliki usaha sendiri/bersama</label>
                             <select required name="have_usaha" class="form-control">
@@ -394,11 +557,11 @@
                                     Tidak</option>
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Penghasilan Bulanan</label>
@@ -406,7 +569,7 @@
                                 name="penghasilan_bulanan" class="form-control currency">
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
 
 
@@ -440,7 +603,21 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        const penerangan = document.getElementById('sumber_penerangan');
+        const watt = document.getElementById('watt_listrik');
+
+        penerangan.addEventListener('change', function() {
+            if (penerangan.value === 'Listrik') {
+                watt.style.display = 'block';
+            } else {
+                watt.style.display = 'none';
+            }
+        });
+
         generateARTForms(); // Jalankan fungsi segera setelah halaman dimuat
+
+        // Panggil event 'change' secara otomatis
+        penerangan.dispatchEvent(new Event('change'));
     });
 
     function generateARTForms() {
@@ -474,7 +651,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Hubungan dengan Kepala Keluarga</label>
-                             <select required name="hubungan_art_${i + 1}" class="form-control">
+                             <select required name="hubungan_art_${i + 1}" id="hubungan_art_${i + 1}" class="form-control">
                                 <option value="">-- Pilih Hubungan dengan Kepala Keluarga --</option>
                                 <option value="Kepala rumah tangga" ${art.hubungan === 'Kepala rumah tangga' ? 'selected' : ''}>Kepala rumah tangga</option>
                                 <option value="Istri/Suami" ${art.hubungan === 'Istri/Suami' ? 'selected' : ''}>Istri/Suami</option>
@@ -501,52 +678,25 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label>Umur</label>
-                            <input required name="umur_art_${i + 1}" type="string" class="form-control" value="${art.umur}">
+                            <label>Tempat Lahir </label>
+                            <input value="${art.tempat_lahir}" required type="text" name="tempat_lahir_art_${i + 1}" class="form-control"
+                                placeholder="isi dengan lengkap ">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label>Status Perkawinan</label>
-                            <select required name="status_kawin_art_${i + 1}" class="form-control">
-                                <option value="">-- Pilih Status Kawin --</option>
-                                <option value="Belum Kawin" ${art.status_kawin === 'Belum Kawin' ? 'selected' : ''}>Belum Kawin</option>
-                                <option value="Kawin/nikah" ${art.status_kawin === 'Kawin/nikah' ? 'selected' : ''}>Kawin/nikah</option>
-                                <option value="Cerai hidup" ${art.status_kawin === 'Cerai hidup' ? 'selected' : ''}>Cerai hidup</option>
-                                <option value="Cerai mati" ${art.status_kawin === 'Cerai mati' ? 'selected' : ''}>Cerai mati</option>
-                            </select>
+                            <label>Tanggal Lahir</label>
+                            <input value="${art.tgl_lahir}" required type="date" name="tgl_lahir_art_${i + 1}" class="form-control"
+                                placeholder="isi dengan lengkap ">
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Kepemilikan Akta</label>
-                            <select required name="kepemilikan_akta_art_${i + 1}" class="form-control">
-                                <option value="">-- Pilih Kepemilikan Akta --</option>
-                                <option value="Tidak" ${art.kepemilikan_akta === 'Tidak' ? 'selected' : ''}>Tidak</option>
-                                <option value="Ya, dapat ditunjukkan" ${art.kepemilikan_akta === 'Ya, dapat ditunjukkan' ? 'selected' : ''}>Ya, dapat ditunjukkan</option>
-                                <option value="Ya, tidak dapat ditunjukkan" ${art.kepemilikan_akta === 'Ya, tidak dapat ditunjukkan' ? 'selected' : ''}>Ya, tidak dapat ditunjukkan</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Kartu Identitas</label>
-                            <select required name="kartu_identitas_art_${i + 1}" class="form-control">
-                                <option value="">-- Pilih Kartu Identitas --</option>
-                                <option value="Tidak memiliki" ${art.kartu_identitas === 'Tidak memiliki' ? 'selected' : ''}>Tidak memiliki</option>
-                                <option value="Akta kelahiran" ${art.kartu_identitas === 'Akta kelahiran' ? 'selected' : ''}>Akta kelahiran</option>
-                                <option value="Kartu pelajar" ${art.kartu_identitas === 'Kartu pelajar' ? 'selected' : ''}>Kartu pelajar</option>
-                                <option value="KTP" ${art.kartu_identitas === 'KTP' ? 'selected' : ''}>KTP</option>
-                                <option value="SIM" ${art.kartu_identitas === 'SIM' ? 'selected' : ''}>SIM</option>
-                            </select>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label>Status Kehamilan (opsional)</label>
-                                <select  name="status_kehamilan_art_${i + 1}" class="form-control">
+                                <select  name="status_kehamilan_art_${i + 1}" id="status_kehamilan_art_${i + 1}" class="form-control">
                                     <option value="">-- Pilih Status Kehamilan --</option>
                                       <option value="Ya" ${art.status_kehamilan === 'Ya' ? 'selected' : ''}>Ya</option>
                                 <option value="Tidak" ${art.status_kehamilan === 'Tidak' ? 'selected' : ''}>Tidak</option>
@@ -569,6 +719,12 @@
                                     <option ${art.riwayat_penyakit === 'Kanker atau tumor ganas' ? 'selected' : ''} value="Kanker atau tumor ganas">Kanker atau tumor ganas</option>
                                     <option ${art.riwayat_penyakit === 'Lainnya (gagal ginjal, paru-paru flek, dan sejenisnya)' ? 'selected' : ''} value="Lainnya (gagal ginjal, paru-paru flek, dan sejenisnya)">Lainnya (gagal ginjal, paru-paru flek, dan sejenisnya)</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Jenis cacat</label>
+                                <input value="${art.jenis_cacat}" required type="text" name="jenis_cacat_art_${i + 1}" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -623,24 +779,80 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pekerjaan Utama</label>
-                                <input value="${art.pekerjaan}" required name="pekerjaan_art_${i + 1}" type="text" class="form-control">
-                                
+                                <select  name="pekerjaan_art_${i + 1}" id="pekerjaan_art_${i + 1}" class="form-control">
+                                    <option value="">-- Pilih --</option>
+                                    <option ${art.pekerjaan === 'Petani' ? 'selected' : ''}  value="Petani">Petani</option>
+                                    <option ${art.pekerjaan === 'Pekebun' ? 'selected' : ''}  value="Pekebun">Pekebun</option>
+                                    <option ${art.pekerjaan === 'Peternak' ? 'selected' : ''}  value="Peternak">Peternak</option>
+                                    <option ${art.pekerjaan === 'Kuli bangunan' ? 'selected' : ''}  value="Kuli bangunan">Kuli bangunan</option>
+                                    <option ${art.pekerjaan === 'Pedagang' ? 'selected' : ''}  value="Pedagang">Pedagang</option>
+                                    <option ${art.pekerjaan === 'Jasa pendidikan' ? 'selected' : ''}  value="Jasa pendidikan">Jasa pendidikan</option>
+                                    <option ${art.pekerjaan === 'Jasa kesehatan' ? 'selected' : ''}  value="Jasa kesehatan">Jasa kesehatan</option>
+                                    <option ${art.pekerjaan === 'Lainnya' ? 'selected' : ''}  value="Lainnya">Lainnya</option>
+                                </select>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6" id="penghasilan_${i + 1}" style="display:none;">
                             <div class="form-group">
-                                <label>Kedudukan Pekerjaan</label>
-                                <input value="${art.kedudukan_pekerjaan}" required name="kedudukan_pekerjaan_art_${i + 1}" type="text" class="form-control">
+                                <label>Penghasilan Perbulan</label>
+                                <input type="text" value="${art.penghasilan_perbulan}" name="penghasilan_perbulan_art_${i + 1}" class="form-control " id="penghasilan_perbulan_${i + 1}" placeholder="Isi dengan nominal">
                             </div>
                         </div>
                     </div>
+                    
                 <!-- Lanjutkan dengan field lainnya -->
             </div>
         </div>
     `;
             container.insertAdjacentHTML('beforeend', artForm);
+
+            const hubunganElement = document.getElementById(`hubungan_art_${i + 1}`);
+            const statusHamilElement = document.getElementById(`status_kehamilan_art_${i + 1}`);
+            const pekerjaanElement = document.getElementById(`pekerjaan_art_${i + 1}`);
+            const penghasilanElement = document.getElementById(`penghasilan_${i + 1}`);
+            const penghasilanInput = document.getElementById(`penghasilan_perbulan_${i + 1}`);
+            statusHamilElement.parentElement.style.display = 'none'
+
+            hubunganElement.addEventListener('change', function() {
+                if (hubunganElement.value === 'Istri/Suami') {
+                    statusHamilElement.parentElement.style.display = 'block';
+                } else {
+                    statusHamilElement.parentElement.style.display = 'none';
+                }
+            });
+
+            pekerjaanElement.addEventListener('change', function() {
+                if (pekerjaanElement.value !== '') {
+                    penghasilanElement.style.display = 'block';
+                } else {
+                    penghasilanInput.value = ''
+                    penghasilanElement.style.display = 'none';
+                }
+            });
+
+            penghasilanInput.addEventListener('keyup', function(e) {
+                penghasilanInput.value = formatRupiah(this.value);
+            });
+
+            // Panggil event 'change' secara otomatis
+            hubunganElement.dispatchEvent(new Event('change'));
+            pekerjaanElement.dispatchEvent(new Event('change'));
+        }
+
+        function formatRupiah(angka, prefix = 'Rp. ') {
+            const numberString = angka.replace(/[^,\d]/g, '').toString();
+            const split = numberString.split(',');
+            const sisa = split[0].length % 3;
+            let rupiah = split[0].substr(0, sisa);
+            const ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+            if (ribuan) {
+                const separator = sisa ? '.' : '';
+                rupiah += separator + ribuan.join('.');
+            }
+
+            rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
+            return prefix + rupiah;
         }
     }
 </script>

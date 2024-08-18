@@ -7,6 +7,12 @@
                 <th class="text-nowrap">Nama KRT</th>
                 <th class="text-nowrap">NIK</th>
                 <th class="text-nowrap">Alamat</th>
+                <th class="text-nowrap">Tempat, Tanggal Lahir</th>
+                <th class="text-nowrap">Pendidikan terakhir</th>
+                <th class="text-nowrap">Pekerjaan</th>
+                <th class="text-nowrap">Penghasilan perbulan</th>
+                <th class="text-nowrap">Penyakit kronis</th>
+                <th class="text-nowrap">Jenis cacat</th>
                 <th class="text-nowrap">Status</th>
                 <th class="text-nowrap">Detail ART</th>
                 <th class="text-nowrap">Detail Perumahan</th>
@@ -21,6 +27,13 @@
                     <td class="text-nowrap">{{ $data->krt->nama }} </td>
                     <td class="text-nowrap">{{ $data->krt->nik }}</td>
                     <td class="text-nowrap">{{ $data->krt->alamat }}</td>
+                    <td class="text-nowrap">{{ $data->krt->tempat_lahir }},
+                        {{ $data->krt->tgl_lahir }}</td>
+                    <td class="text-nowrap">{{ $data->krt->pendidikan_terakhir }}</td>
+                    <td class="text-nowrap">{{ $data->krt->pekerjaan }}</td>
+                    <td class="text-nowrap">{{ $data->krt->penghasilan_perbulan }}</td>
+                    <td class="text-nowrap">{{ $data->krt->riwayat_penyakit }}</td>
+                    <td class="text-nowrap">{{ $data->krt->jenis_cacat }}</td>
                     <td>
                         @if ($data->penerima->status == 'S')
                             <span class="badge badge-success">Telah diverifikasi</span>
@@ -51,5 +64,3 @@
         </tbody>
     </table>
 </div>
-
-

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\PenerimaPKH;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,15 +13,41 @@ class AdminController extends Controller
     {
         $this->menu = $menu;
     }
-    
+
     /**
      * Display a listing of the resource.
      */
-    
+
     public function index()
-    {   
+    {
         $menu = $this->menu;
-        return view('pages.admin.index', compact('menu'));
+        $sudahDiverifikasi = PenerimaPKH::where('status', 'S')->count();
+        $belumDiproses = PenerimaPKH::where('status', 'B')->count();
+
+        // Menyiapkan data untuk chart
+        $chartData = [
+            'labels' => ['Sudah diverifikasi', 'Belum diproses'],
+            'data' => [$sudahDiverifikasi, $belumDiproses]
+        ];
+        return view('pages.admin.index', compact('menu', 'chartData'));
+    }
+
+    public function statistik()
+    {
+        // Menghitung jumlah penerima PKH berdasarkan status
+        $menu = 'dashboard';
+        $sudahDiverifikasi = PenerimaPKH::where('status', 'S')->count();
+        $belumDiproses = PenerimaPKH::where('status', 'B')->count();
+
+        // Menyiapkan data untuk chart
+        $chartData = [
+            'labels' => ['Sudah diverifikasi', 'Belum diproses'],
+            'data' => [$sudahDiverifikasi, $belumDiproses]
+        ];
+
+        $menu = 'dashboard';
+
+        return view('pages.user.statistik', compact('menu', 'chartData'));
     }
 
     /**
