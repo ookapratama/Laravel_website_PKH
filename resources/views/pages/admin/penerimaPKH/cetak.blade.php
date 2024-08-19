@@ -42,12 +42,11 @@
 
     <div class="section">
         <h2>Identitas Kepala Rumah</h2>
-        <h3>Nomor KK: {{ $getKepala->kk }}</h3>
         <ul>
             <li>Nama Kepala Rumah Tangga: {{ $getKepala->nama }}</li>
             <li>NIK: {{ $getKepala->nik }}</li>
             <li>Jenis kelamin: {{ $getKepala->jkl }}</li>
-            <li>Alamat: {{ $getKepala->alamat }} - RT{{ $getKepala->rt }}/RW{{ $getKepala->rw }}</li>
+            <li>Alamat: {{ $getKepala->alamat }} </li>
             <li>Pendidikan terakhir: {{ $getKepala->pendidikan_terakhir }}</li>
             <li>Pekerjaan: {{ $getKepala->pekerjaan }}</li>
             <li>Tempat, tanggal lahir: {{ $getKepala->tempat_lahir }}, {{ $getKepala->tgl_lahir }} </li>
@@ -124,9 +123,7 @@
             <li>Penggunaan fasilitas tempat BAB : {{ $getRumah->guna_wc }}</li>
             <li>Jenis kloset : {{ $getRumah->jenis_wc }}</li>
             <li>Tempat pembuangan akhir tinja : {{ $getRumah->akhir_wc }}</li>
-            <li>Foto :
-                <img src="{{ public_path('upload/rumah/' . $getRumah->foto) }}" width="600" alt="">
-            </li>
+
             <!-- Add more fields as needed -->
         </ul>
     </div>
@@ -144,6 +141,8 @@
             <!-- Add more fields as needed -->
         </ul>
     </div>
+    <p>Foto rumah : </p>
+    <img src="{{ public_path('upload/rumah/' . $getRumah->foto) }}" width="200" alt="">
 
 </body>
 

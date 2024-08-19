@@ -15,21 +15,21 @@
                             <input required name="nama" type="text" class="form-control">
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>No KK</label>
-                            <input required name="kk" type="text" class="form-control">
-                        </div>
-                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>NIK</label>
                             <input required name="nik" type="number" class="form-control">
                         </div>
                     </div>
+                </div>
+
+                <div class="row">
+                    {{-- <div class="col-md-6">
+                        <div class="form-group">
+                            <label>No KK</label>
+                            <input required name="kk" type="text" class="form-control">
+                        </div>
+                    </div> --}}
                 </div>
 
 
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-3">
+                    {{-- <div class="col-md-3">
                         <div class="form-group">
                             <label>RT </label>
                             <input required type="string" max="3" placeholder="00X" name="rt"
@@ -87,7 +87,7 @@
                             <input required type="string" max="3" placeholder="00X" name="rw"
                                 class="form-control">
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Pendidikan terakhir </label>
@@ -157,7 +157,21 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Jenis cacat</label>
-                            <input required type="text" name="jenis_cacat" class="form-control">
+                            <select required name="jenis_cacat" class="form-control ">
+                                <option value="">-- Pilih --</option>
+                                <option value="Tidak cacat">Tidak cacat</option>
+                                <option value="Tidak daksa/cacat tubuh">Tidak daksa/cacat tubuh</option>
+                                <option value="Tuna netra/buta">Tuna netra/buta</option>
+                                <option value="Tuna rungu">Tuna rungu</option>
+                                <option value="Tuna wicara">Tuna wicara</option>
+                                <option value="Tuna rungu dan wicara">Tuna rungu dan wicara</option>
+                                <option value="Tuna netra dan cacat tubuh">Tuna netra dan cacat tubuh</option>
+                                <option value="Tuna netra, rungu dan wicara">Tuna netra, rungu dan wicara</option>
+                                <option value="Tuna rungu, wicara, dan cacat tubuh">Tuna rungu, wicara, dan cacat tubuh</option>
+                                <option value="Cacat mental retardasi">Cacat mental retardasi</option>
+                                <option value="Mantan penderita gangguan jiwa">Mantan penderita gangguan jiwa</option>
+                                <option value="Cacat fisik dan mental">Cacat fisik dan mental</option>
+                            </select>
                         </div>
                     </div>
 
@@ -600,7 +614,21 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label>Jenis cacat</label>
-                                <input required type="text" name="jenis_cacat_art_${i}" class="form-control">
+                                <select required name="jenis_cacat_art_${i}" class="form-control ">
+                                    <option value="">-- Pilih --</option>
+                                    <option value="Tidak cacat">Tidak cacat</option>
+                                    <option value="Tidak daksa/cacat tubuh">Tidak daksa/cacat tubuh</option>
+                                    <option value="Tuna netra/buta">Tuna netra/buta</option>
+                                    <option value="Tuna rungu">Tuna rungu</option>
+                                    <option value="Tuna wicara">Tuna wicara</option>
+                                    <option value="Tuna rungu dan wicara">Tuna rungu dan wicara</option>
+                                    <option value="Tuna netra dan cacat tubuh">Tuna netra dan cacat tubuh</option>
+                                    <option value="Tuna netra, rungu dan wicara">Tuna netra, rungu dan wicara</option>
+                                    <option value="Tuna rungu, wicara, dan cacat tubuh">Tuna rungu, wicara, dan cacat tubuh</option>
+                                    <option value="Cacat mental retardasi">Cacat mental retardasi</option>
+                                    <option value="Mantan penderita gangguan jiwa">Mantan penderita gangguan jiwa</option>
+                                    <option value="Cacat fisik dan mental">Cacat fisik dan mental</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-3">

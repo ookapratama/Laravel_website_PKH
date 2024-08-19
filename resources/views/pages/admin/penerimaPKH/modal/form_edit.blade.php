@@ -5,13 +5,22 @@
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-md-5">
                         <div class="form-group">
                             <label>Nama Lengkap</label>
                             <input value="{{ $datas->krt->nama }}" required name="nama" type="text"
                                 class="form-control">
                         </div>
                     </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>NIK</label>
+                            <input value="{{ $datas->krt->nik }}" required name="nik" type="number"
+                                class="form-control">
+                        </div>
+                    </div>
+
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Status Verifikasi</label>
@@ -27,20 +36,14 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
+                    {{-- <div class="col-md-6">
                         <div class="form-group">
                             <label>No KK</label>
                             <input value="{{ $datas->krt->kk }}" required name="kk" type="text"
                                 class="form-control">
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>NIK</label>
-                            <input value="{{ $datas->krt->nik }}" required name="nik" type="number"
-                                class="form-control">
-                        </div>
-                    </div>
+                    </div> --}}
+
                 </div>
 
 
@@ -67,6 +70,12 @@
                         </div>
                     </div>
 
+
+
+
+                </div>
+
+                <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Tempat Lahir </label>
@@ -81,12 +90,10 @@
                                 class="form-control" placeholder="isi dengan lengkap ">
                         </div>
                     </div>
-
-
                 </div>
 
                 <div class="row">
-                    <div class="col-md-3">
+                    {{-- <div class="col-md-3">
                         <div class="form-group">
                             <label>RT </label>
                             <input value="{{ $datas->krt->rt }}" required type="string" max="3"
@@ -99,7 +106,7 @@
                             <input value="{{ $datas->krt->rw }}" required type="string" max="3"
                                 placeholder="00X" name="rw" class="form-control">
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="col-md-3">
                         <div class="form-group">
@@ -199,8 +206,21 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Jenis cacat</label>
-                            <input value="{{ $datas->krt->jenis_cacat }}" required type="text" name="jenis_cacat"
-                                class="form-control">
+                            <select required name="jenis_cacat" class="form-control ">
+                                <option value="">-- Pilih --</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tidak cacat' ? 'selected' : '' }} value="Tidak cacat">Tidak cacat</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tidak daksa/cacat tubuh' ? 'selected' : '' }} value="Tidak daksa/cacat tubuh">Tidak daksa/cacat tubuh</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna netra/buta' ? 'selected' : '' }} value="Tuna netra/buta">Tuna netra/buta</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna rungu' ? 'selected' : '' }} value="Tuna rungu">Tuna rungu</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna wicara' ? 'selected' : '' }} value="Tuna wicara">Tuna wicara</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna rungu dan wicara' ? 'selected' : '' }} value="Tuna rungu dan wicara">Tuna rungu dan wicara</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna netra dan cacat tubuh' ? 'selected' : '' }} value="Tuna netra dan cacat tubuh">Tuna netra dan cacat tubuh</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna netra, rungu dan wicara' ? 'selected' : '' }} value="Tuna netra, rungu dan wicara">Tuna netra, rungu dan wicara</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna rungu, wicara, dan cacat tubuh' ? 'selected' : '' }} value="Tuna rungu, wicara, dan cacat tubuh">Tuna rungu, wicara, dan cacat tubuh</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Cacat mental retardasi' ? 'selected' : '' }} value="Cacat mental retardasi">Cacat mental retardasi</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Mantan penderita gangguan jiwa' ? 'selected' : '' }} value="Mantan penderita gangguan jiwa">Mantan penderita gangguan jiwa</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Cacat fisik dan mental' ? 'selected' : '' }} value="Cacat fisik dan mental">Cacat fisik dan mental</option>
+                            </select>
                         </div>
                     </div>
 
@@ -724,7 +744,21 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label>Jenis cacat</label>
-                                <input value="${art.jenis_cacat}" required type="text" name="jenis_cacat_art_${i + 1}" class="form-control">
+                                <select required name="jenis_cacat_art_${i + 1}" class="form-control ">
+                                    <option value="">-- Pilih --</option>
+                                    <option  ${art.jenis_cacat == 'Tidak cacat' ? 'selected' : ''}  value="Tidak cacat">Tidak cacat</option>
+                                    <option  ${art.jenis_cacat == 'Tidak daksa/cacat tubuh' ? 'selected' : ''}  value="Tidak daksa/cacat tubuh">Tidak daksa/cacat tubuh</option>
+                                    <option  ${art.jenis_cacat == 'Tuna netra/buta' ? 'selected' : ''}  value="Tuna netra/buta">Tuna netra/buta</option>
+                                    <option  ${art.jenis_cacat == 'Tuna rungu' ? 'selected' : ''}  value="Tuna rungu">Tuna rungu</option>
+                                    <option  ${art.jenis_cacat == 'Tuna wicara' ? 'selected' : ''}  value="Tuna wicara">Tuna wicara</option>
+                                    <option  ${art.jenis_cacat == 'Tuna rungu dan wicara' ? 'selected' : ''}  value="Tuna rungu dan wicara">Tuna rungu dan wicara</option>
+                                    <option  ${art.jenis_cacat == 'Tuna netra dan cacat tubuh' ? 'selected' : ''}  value="Tuna netra dan cacat tubuh">Tuna netra dan cacat tubuh</option>
+                                    <option  ${art.jenis_cacat == 'Tuna netra, rungu dan wicara' ? 'selected' : ''}  value="Tuna netra, rungu dan wicara">Tuna netra, rungu dan wicara</option>
+                                    <option  ${art.jenis_cacat == 'Tuna rungu, wicara, dan cacat tubuh' ? 'selected' : ''}  value="Tuna rungu, wicara, dan cacat tubuh">Tuna rungu, wicara, dan cacat tubuh</option>
+                                    <option  ${art.jenis_cacat == 'Cacat mental retardasi' ? 'selected' : ''}  value="Cacat mental retardasi">Cacat mental retardasi</option>
+                                    <option  ${art.jenis_cacat == 'Mantan penderita gangguan jiwa' ? 'selected' : ''}  value="Mantan penderita gangguan jiwa">Mantan penderita gangguan jiwa</option>
+                                    <option  ${art.jenis_cacat == 'Cacat fisik dan mental' ? 'selected' : ''}  value="Cacat fisik dan mental">Cacat fisik dan mental</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-3">

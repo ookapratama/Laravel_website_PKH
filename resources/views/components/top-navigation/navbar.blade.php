@@ -26,10 +26,10 @@
                 <a href="/" class="nav-link"><span>Home</span></a>
             </li>
             <li class="nav-item {{ $menu == 'kontak' ? 'active' : '' }}">
-                <a href="/kontak" class="nav-link"><span>Kontak</span></a>
+                <a href="{{ route('kontak') }}" class="nav-link"><span>Kontak</span></a>
             </li>
             <li class="nav-item {{ $menu == 'informasi' ? 'active' : '' }}">
-                <a href="/informasi" class="nav-link"><span>Informasi PKH</span></a>
+                <a href="{{ route('informasi') }}" class="nav-link"><span>Informasi PKH</span></a>
             </li>
             <li class="nav-item {{ $menu == 'permintaan' ? 'active' : '' }}">
                 <a href="{{ route('permintaan.index') }}" class="nav-link"><span>Pendaftaran Calon Penerima PKH</span></a>

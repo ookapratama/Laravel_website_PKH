@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('kepala_rumahs', function (Blueprint $table) {
             $table->id();
-            $table->string('kk');
+            $table->string('kk')->nullable();
             $table->string('nik');
             $table->string('nama');
             $table->string('jkl');
             $table->string('alamat');
-            $table->string('rt');
-            $table->string('rw');
+            $table->string('rt')->nullable();
+            $table->string('rw')->nullable();
             $table->string('pendidikan_terakhir');
             $table->string('pekerjaan');
             $table->string('tempat_lahir');

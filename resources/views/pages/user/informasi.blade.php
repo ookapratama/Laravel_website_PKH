@@ -13,35 +13,26 @@
 
 
             <div class="section-body">
-                <h2 class="section-title">Informasi</h2>
-                <p class="section-lead">
-                    Informasi PKH
-                </p>
+                <h3 >Informasi bagi yang layak menerima bantuan</h3>
+                <h2 class="section-title">Informasi Kriteria penerima</h2>
 
                 <div class="card-body">
                     <img src="{{ asset('img/Group_31.png') }}" class="img-fluid" alt="">
                 </div>
                 
-              
+                <h2 class="section-title">Informasi besaran yang diterima</h2>
+                <div class="card-body text-center">
+                    <img src="{{ asset('img/Group_19.png') }}" width="600" class="img-fluid" alt="">
+                </div>
+                
 
+                <h3>Informasi bagi yang tidak layak menerima bantuan</h3>
                 <h2 class="section-title">Informasi</h2>
-                <p class="section-lead">
-                    Informasi PKH
-                </p>
 
                 <div class="card-body">
                     <img src="{{ asset('img/Group_32.png') }}" class="img-fluid" alt="">
                 </div>
 
-                <h2 class="section-title">Informasi</h2>
-                <p class="section-lead">
-                    Informasi PKH
-                </p>
-
-                <div class="card-body text-center">
-                    <img src="{{ asset('img/Group_19.png') }}" width="600" class="img-fluid" alt="">
-                </div>
-                
             </div>
         </section>
     </div>

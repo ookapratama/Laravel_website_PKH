@@ -3,7 +3,6 @@
         <thead>
             <tr>
                 <th class="text-center">#</th>
-                <th class="text-nowrap">Nomor KK</th>
                 <th class="text-nowrap">Nama KRT</th>
                 <th class="text-nowrap">NIK</th>
                 <th class="text-nowrap">Alamat</th>
@@ -25,7 +24,6 @@
             @foreach ($datas as $i => $data)
                 <tr>
                     <td>{{ ++$i }}</td>
-                    <td class="text-nowrap">{{ $data->krt->kk ?? '' }}</td>
                     <td class="text-nowrap">{{ $data->krt->nama }} </td>
                     <td class="text-nowrap">{{ $data->krt->nik }}</td>
                     <td class="text-nowrap">{{ $data->krt->alamat }}</td>

@@ -64,11 +64,12 @@ class PenerimaPKHController extends Controller
         // dd($r);
         $krtId = $request->krt_id;
 
+        $krtData = KepalaRumah::find($krtId);
         $artData = AnggotaRumahTangga::where('kepala_id', $krtId)->get();
         $asetData = KetAset::where('kepala_id', $krtId)->first();
         $rumahData = KetPerumahan::where('kepala_id', $krtId)->first();
         // dd($rumahData);
-        return view('pages.admin.penerimaPKH.modal.modal', compact('artData', 'asetData', 'rumahData'));
+        return view('pages.admin.penerimaPKH.modal.modal', compact('artData', 'asetData', 'rumahData', 'krtData'));
     }
 
     /**
