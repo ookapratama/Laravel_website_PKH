@@ -49,6 +49,7 @@
             <li>Alamat: {{ $getKepala->alamat }} </li>
             <li>Pendidikan terakhir: {{ $getKepala->pendidikan_terakhir }}</li>
             <li>Pekerjaan: {{ $getKepala->pekerjaan }}</li>
+            <li>Penghasilan Perbulan: Rp. {{ $getKepala->penghasilan_perbulan }}</li>
             <li>Tempat, tanggal lahir: {{ $getKepala->tempat_lahir }}, {{ $getKepala->tgl_lahir }} </li>
             <li>Riwayat penyakit: {{ $getKepala->riwayat_penyakit }}</li>
             <li>Jenis cacat: {{ $getKepala->jenis_cacat }}</li>
@@ -85,18 +86,16 @@
                         <td>{{ $art->nik }}</td>
                         <td>{{ $art->nama }}</td>
                         <td>{{ $art->hubungan }}</td>
-                        @if ($art->hubungan == 'Istri/Suami')
-                            <td>{{ $art->status_kehamilan }}</td>
-                        @endif
+                        <td>{{ $art->status_kehamilan ?? '-' }}</td>
                         <td>{{ $art->jkl }}</td>
                         <td>{{ $art->tempat_lahir }}, {{ $art->tgl_lahir }} </td>
-                        <td>{{ $art->riwayat_penyakit }}</td>
-                        <td>{{ $art->jenis_cacat }}</td>
-                        <td>{{ $art->partisipasi_sekolah }}</td>
-                        <td>{{ $art->jenjang_pendidikan }}</td>
-                        <td>{{ $art->ijazah }}</td>
-                        <td>{{ $art->pekerjaan }}</td>
-                        <td>{{ $art->penghasilan_perbulan }}</td>
+                        <td>{{ $art->riwayat_penyakit ?? '-' }}</td>
+                        <td>{{ $art->jenis_cacat ?? '-' }}</td>
+                        <td>{{ $art->partisipasi_sekolah ?? '-' }}</td>
+                        <td>{{ $art->jenjang_pendidikan ?? '-' }}</td>
+                        <td>{{ $art->ijazah ?? '-' }}</td>
+                        <td>{{ $art->pekerjaan ?? '-' }}</td>
+                        <td>{{ $art->penghasilan_perbulan ?? '-' }}</td>
                     </tr>
                 @endforeach
             </tbody>
@@ -110,10 +109,11 @@
             <li>Status Penugasan bangunan tempat tinggal: {{ $getRumah->status_penugasan }}</li>
             <li>Status Lahan tempat tinggal: {{ $getRumah->status_lahan }}</li>
             <li>Luas Lantai : {{ $getRumah->luas_lantai }}(m2)</li>
+            <li>Jumlah kamar : {{ $getRumah->jumlah_kamar }}</li>
             <li>Jenis Lantai : {{ $getRumah->jenis_lantai }}</li>
             <li>Jenis Atap : {{ $getRumah->jenis_atap }}</li>
-            <li>Kondisi atap : {{ $getRumah->kondisi_atap }}</li>
-            <li>Jumlah kamar : {{ $getRumah->jumlah_kamar }}</li>
+            {{-- <li>Kondisi atap : {{ $getRumah->kondisi_atap }}</li> --}}
+            {{-- <li>Jumlah kamar : {{ $getRumah->jumlah_kamar }}</li> --}}
             <li>Cara memperoleh air minum : {{ $getRumah->peroleh_air }}</li>
             <li>Sumber Penerangan utama : {{ $getRumah->sumber_penerangan }}</li>
             @if ($getRumah->sumber_penerangan == 'Listrik')
@@ -137,7 +137,7 @@
             <li>Sepeda: {{ $getAset->have_sepeda }}</li>
             <li>Sepeda motor: {{ $getAset->have_motor }}</li>
             <li>Luas lahan: {{ $getAset->luas_lahan }}(m2)</li>
-            <li>kepemilikan_akta ternak: {{ $getAset->have_ternak }} Sebanyak {{ $getAset->jumlah_ternak }}</li>
+            <li>kepemilikan ternak: {{ $getAset->have_ternak }} Sebanyak {{ $getAset->jumlah_ternak }}</li>
             <!-- Add more fields as needed -->
         </ul>
     </div>

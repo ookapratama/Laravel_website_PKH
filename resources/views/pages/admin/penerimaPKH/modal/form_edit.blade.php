@@ -149,6 +149,12 @@
                             <label>Pekerjaan </label>
                             <select required name="pekerjaan" class="form-control">
                                 <option value="">-- Pilih --</option>
+                                <option {{ $datas->krt->pekerjaan == 'Ibu Rumah Tangga' ? 'selected' : '' }}
+                                    value="Ibu Rumah Tangga">
+                                    Ibu Rumah Tangga</option>
+                                <option {{ $datas->krt->pekerjaan == 'Wiraswasta' ? 'selected' : '' }}
+                                    value="Wiraswasta">
+                                    Wiraswasta</option>
                                 <option {{ $datas->krt->pekerjaan == 'Petani' ? 'selected' : '' }} value="Petani">
                                     Petani</option>
                                 <option {{ $datas->krt->pekerjaan == 'Pekebun' ? 'selected' : '' }} value="Pekebun">
@@ -159,10 +165,6 @@
                                     value="Kuli bangunan">Kuli bangunan</option>
                                 <option {{ $datas->krt->pekerjaan == 'Pedagang' ? 'selected' : '' }} value="Pedagang">
                                     Pedagang</option>
-                                <option {{ $datas->krt->pekerjaan == 'Jasa pendidikan' ? 'selected' : '' }}
-                                    value="Jasa pendidikan">Jasa pendidikan</option>
-                                <option {{ $datas->krt->pekerjaan == 'Jasa kesehatan' ? 'selected' : '' }}
-                                    value="Jasa kesehatan">Jasa kesehatan</option>
                                 <option {{ $datas->krt->pekerjaan == 'Lainnya' ? 'selected' : '' }} value="Lainnya">
                                     Lainnya</option>
                             </select>
@@ -208,18 +210,35 @@
                             <label>Jenis cacat</label>
                             <select required name="jenis_cacat" class="form-control ">
                                 <option value="">-- Pilih --</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Tidak cacat' ? 'selected' : '' }} value="Tidak cacat">Tidak cacat</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Tidak daksa/cacat tubuh' ? 'selected' : '' }} value="Tidak daksa/cacat tubuh">Tidak daksa/cacat tubuh</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Tuna netra/buta' ? 'selected' : '' }} value="Tuna netra/buta">Tuna netra/buta</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Tuna rungu' ? 'selected' : '' }} value="Tuna rungu">Tuna rungu</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Tuna wicara' ? 'selected' : '' }} value="Tuna wicara">Tuna wicara</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Tuna rungu dan wicara' ? 'selected' : '' }} value="Tuna rungu dan wicara">Tuna rungu dan wicara</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Tuna netra dan cacat tubuh' ? 'selected' : '' }} value="Tuna netra dan cacat tubuh">Tuna netra dan cacat tubuh</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Tuna netra, rungu dan wicara' ? 'selected' : '' }} value="Tuna netra, rungu dan wicara">Tuna netra, rungu dan wicara</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Tuna rungu, wicara, dan cacat tubuh' ? 'selected' : '' }} value="Tuna rungu, wicara, dan cacat tubuh">Tuna rungu, wicara, dan cacat tubuh</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Cacat mental retardasi' ? 'selected' : '' }} value="Cacat mental retardasi">Cacat mental retardasi</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Mantan penderita gangguan jiwa' ? 'selected' : '' }} value="Mantan penderita gangguan jiwa">Mantan penderita gangguan jiwa</option>
-                                <option {{ $datas->krt->jenis_cacat == 'Cacat fisik dan mental' ? 'selected' : '' }} value="Cacat fisik dan mental">Cacat fisik dan mental</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tidak cacat' ? 'selected' : '' }}
+                                    value="Tidak cacat">Tidak cacat</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tidak daksa/cacat tubuh' ? 'selected' : '' }}
+                                    value="Tidak daksa/cacat tubuh">Tidak daksa/cacat tubuh</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna netra/buta' ? 'selected' : '' }}
+                                    value="Tuna netra/buta">Tuna netra/buta</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna rungu' ? 'selected' : '' }}
+                                    value="Tuna rungu">Tuna rungu</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna wicara' ? 'selected' : '' }}
+                                    value="Tuna wicara">Tuna wicara</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Tuna rungu dan wicara' ? 'selected' : '' }}
+                                    value="Tuna rungu dan wicara">Tuna rungu dan wicara</option>
+                                <option
+                                    {{ $datas->krt->jenis_cacat == 'Tuna netra dan cacat tubuh' ? 'selected' : '' }}
+                                    value="Tuna netra dan cacat tubuh">Tuna netra dan cacat tubuh</option>
+                                <option
+                                    {{ $datas->krt->jenis_cacat == 'Tuna netra, rungu dan wicara' ? 'selected' : '' }}
+                                    value="Tuna netra, rungu dan wicara">Tuna netra, rungu dan wicara</option>
+                                <option
+                                    {{ $datas->krt->jenis_cacat == 'Tuna rungu, wicara, dan cacat tubuh' ? 'selected' : '' }}
+                                    value="Tuna rungu, wicara, dan cacat tubuh">Tuna rungu, wicara, dan cacat tubuh
+                                </option>
+                                <option {{ $datas->krt->jenis_cacat == 'Cacat mental retardasi' ? 'selected' : '' }}
+                                    value="Cacat mental retardasi">Cacat mental retardasi</option>
+                                <option
+                                    {{ $datas->krt->jenis_cacat == 'Mantan penderita gangguan jiwa' ? 'selected' : '' }}
+                                    value="Mantan penderita gangguan jiwa">Mantan penderita gangguan jiwa</option>
+                                <option {{ $datas->krt->jenis_cacat == 'Cacat fisik dan mental' ? 'selected' : '' }}
+                                    value="Cacat fisik dan mental">Cacat fisik dan mental</option>
                             </select>
                         </div>
                     </div>
@@ -377,8 +396,8 @@
                             <label>Jumlah watt</label>
                             <select required name="watt_listrik" class="form-control">
                                 <option value="">-- Pilih --</option>
-                                <option {{ $datas->rumah->watt_listrik == '150 watt' ? 'selected' : '' }}
-                                    value="150 watt">150 watt</option>
+                                <option {{ $datas->rumah->watt_listrik == '450 watt' ? 'selected' : '' }}
+                                    value="450 watt">450 watt</option>
                                 <option {{ $datas->rumah->watt_listrik == '600 watt' ? 'selected' : '' }}
                                     value="900 watt">900 watt</option>
                                 <option {{ $datas->rumah->watt_listrik == '1300 watt' ? 'selected' : '' }}
@@ -471,7 +490,8 @@
                     </div>
                     <div class="col-md">
                         <input type="hidden" name="oldFoto" value="{{ $datas->rumah->foto }}">
-                        <img src="{{ asset('upload/rumah/' . $datas->rumah->foto) }}" width="200" alt="">
+                        <img src="{{ asset('upload/rumah/' . $datas->rumah->foto) }}" width="200"
+                            alt="">
                     </div>
 
                 </div>
@@ -489,7 +509,8 @@
                             <label>Lemari es/kulkas</label>
                             <select required name="have_lemari_es" class="form-control">
                                 <option value="">-- Pilih --</option>
-                                <option {{ $datas->aset->have_lemari_es == 'Ya' ? 'selected' : '' }} value="Ya">Ya
+                                <option {{ $datas->aset->have_lemari_es == 'Ya' ? 'selected' : '' }} value="Ya">
+                                    Ya
                                 </option>
                                 <option {{ $datas->aset->have_lemari_es == 'Tidak' ? 'selected' : '' }}
                                     value="Tidak">Tidak</option>
@@ -815,13 +836,13 @@
                                 <label>Pekerjaan Utama</label>
                                 <select  name="pekerjaan_art_${i + 1}" id="pekerjaan_art_${i + 1}" class="form-control">
                                     <option value="">-- Pilih --</option>
+                                    <option ${art.pekerjaan === 'Ibu Rumah Tangga' ? 'selected' : ''}  value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
+                                    <option ${art.pekerjaan === 'Wiraswasta' ? 'selected' : ''}  value="Wiraswasta">Wiraswasta</option>
                                     <option ${art.pekerjaan === 'Petani' ? 'selected' : ''}  value="Petani">Petani</option>
                                     <option ${art.pekerjaan === 'Pekebun' ? 'selected' : ''}  value="Pekebun">Pekebun</option>
                                     <option ${art.pekerjaan === 'Peternak' ? 'selected' : ''}  value="Peternak">Peternak</option>
                                     <option ${art.pekerjaan === 'Kuli bangunan' ? 'selected' : ''}  value="Kuli bangunan">Kuli bangunan</option>
                                     <option ${art.pekerjaan === 'Pedagang' ? 'selected' : ''}  value="Pedagang">Pedagang</option>
-                                    <option ${art.pekerjaan === 'Jasa pendidikan' ? 'selected' : ''}  value="Jasa pendidikan">Jasa pendidikan</option>
-                                    <option ${art.pekerjaan === 'Jasa kesehatan' ? 'selected' : ''}  value="Jasa kesehatan">Jasa kesehatan</option>
                                     <option ${art.pekerjaan === 'Lainnya' ? 'selected' : ''}  value="Lainnya">Lainnya</option>
                                 </select>
                             </div>

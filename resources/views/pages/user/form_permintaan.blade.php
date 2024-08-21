@@ -120,13 +120,13 @@
                             <label>Pekerjaan </label>
                             <select required name="pekerjaan" class="form-control">
                                 <option value="">-- Pilih --</option>
+                                <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
+                                <option value="Wiraswasta">Wiraswasta</option>
                                 <option value="Petani">Petani</option>
                                 <option value="Pekebun">Pekebun</option>
                                 <option value="Peternak">Peternak</option>
                                 <option value="Kuli bangunan">Kuli bangunan</option>
                                 <option value="Pedagang">Pedagang</option>
-                                <option value="Jasa pendidikan">Jasa pendidikan</option>
-                                <option value="Jasa kesehatan">Jasa kesehatan</option>
                                 <option value="Lainnya">Lainnya</option>
                             </select>
 
@@ -296,7 +296,7 @@
                             <label>Jumlah watt</label>
                             <select required name="watt_listrik"  class="form-control">
                                 <option value="">-- Pilih --</option>
-                                <option value="150 watt">150 watt</option>
+                                <option value="450 watt">450 watt</option>
                                 <option value="900 watt">900 watt</option>
                                 <option value="1300 watt">1300 watt</option>
                                 <option value="2200 watt">2200 watt</option>
@@ -685,13 +685,13 @@
                                 <label>Pekerjaan Utama (opsional)</label>
                                 <select  name="pekerjaan_art_${i}" id="pekerjaan_art_${i}" class="form-control">
                                     <option value="">-- Pilih --</option>
+                                    <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
+                                    <option value="Wiraswasta">Wiraswasta</option>
                                     <option value="Petani">Petani</option>
                                     <option value="Pekebun">Pekebun</option>
                                     <option value="Peternak">Peternak</option>
                                     <option value="Kuli bangunan">Kuli bangunan</option>
                                     <option value="Pedagang">Pedagang</option>
-                                    <option value="Jasa pendidikan">Jasa pendidikan</option>
-                                    <option value="Jasa kesehatan">Jasa kesehatan</option>
                                     <option value="Lainnya">Lainnya</option>
                                 </select>
                                 

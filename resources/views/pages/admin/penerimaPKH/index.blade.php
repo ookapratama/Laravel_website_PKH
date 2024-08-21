@@ -68,7 +68,7 @@
                                                         {{ $data->krt->tgl_lahir }}</td>
                                                     <td class="text-nowrap">{{ $data->krt->pendidikan_terakhir }}</td>
                                                     <td class="text-nowrap">{{ $data->krt->pekerjaan }}</td>
-                                                    <td class="text-nowrap">{{ $data->krt->penghasilan_perbulan }}</td>
+                                                    <td class="text-nowrap">Rp. {{ $data->krt->penghasilan_perbulan }}</td>
                                                     <td class="text-nowrap">{{ $data->krt->riwayat_penyakit }}</td>
                                                     <td class="text-nowrap">{{ $data->krt->jenis_cacat }}</td>
                                                     <td>
@@ -515,15 +515,10 @@
                     removeMaskOnSubmit: true
                 });
                 // Existing DataTable initialization
-                var language = {
-                    "sSearch": "Pencarian Data Kegiatan BBGP : ",
-                };
                 var tableKegiatan = $('#table-penerima').DataTable({
-                    paging: true,
-                    searching: true,
-                    language: {
-                        url: 'https://cdn.datatables.net/plug-ins/2.1.0/i18n/id.json',
-                    },
+                    // language: {
+                    //     url: 'https://cdn.datatables.net/plug-ins/2.1.0/i18n/id.json',
+                    // },
                 });
 
 
